@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="sv" xml:lang="sv">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Visualisering | NDAB02 Material</title>
+  <meta name="description" content="2 Visualisering | NDAB02 Material" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Visualisering | NDAB02 Material" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Visualisering | NDAB02 Material" />
+  
+  
+  
+
+<meta name="author" content="Isak Hietala" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduktion.html"/>
+<link rel="next" href="beskrivande-statistik.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduktion.html"><a href="introduktion.html"><i class="fa fa-check"></i><b>1</b> Introduktion</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduktion.html"><a href="introduktion.html#r-och-rstudio"><i class="fa fa-check"></i><b>1.1</b> R och RStudio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduktion.html"><a href="introduktion.html#basic_R"><i class="fa fa-check"></i><b>1.1.1</b> Grundläggande programmering i R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduktion.html"><a href="introduktion.html#ladda-in-material"><i class="fa fa-check"></i><b>1.1.2</b> Ladda in material</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="visualisering.html"><a href="visualisering.html"><i class="fa fa-check"></i><b>2</b> Visualisering</a><ul>
+<li class="chapter" data-level="2.1" data-path="visualisering.html"><a href="visualisering.html#varför-är-visualisering-viktigt"><i class="fa fa-check"></i><b>2.1</b> Varför är visualisering viktigt?</a></li>
+<li class="chapter" data-level="2.2" data-path="visualisering.html"><a href="visualisering.html#grundläggande-begrepp"><i class="fa fa-check"></i><b>2.2</b> Grundläggande begrepp</a></li>
+<li class="chapter" data-level="2.3" data-path="visualisering.html"><a href="visualisering.html#ett-bra-diagram"><i class="fa fa-check"></i><b>2.3</b> Ett bra diagram</a></li>
+<li class="chapter" data-level="2.4" data-path="visualisering.html"><a href="visualisering.html#visualisering-av-beskrivande-statistik"><i class="fa fa-check"></i><b>2.4</b> Visualisering av beskrivande statistik</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="visualisering.html"><a href="visualisering.html#stapeldiagram"><i class="fa fa-check"></i><b>2.4.1</b> Stapeldiagram</a></li>
+<li class="chapter" data-level="2.4.2" data-path="visualisering.html"><a href="visualisering.html#grupperat-stapeldiagram"><i class="fa fa-check"></i><b>2.4.2</b> Grupperat stapeldiagram</a></li>
+<li class="chapter" data-level="2.4.3" data-path="visualisering.html"><a href="visualisering.html#histogram"><i class="fa fa-check"></i><b>2.4.3</b> Histogram</a></li>
+<li class="chapter" data-level="2.4.4" data-path="visualisering.html"><a href="visualisering.html#lådagram"><i class="fa fa-check"></i><b>2.4.4</b> Lådagram</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="visualisering.html"><a href="visualisering.html#samband-mellan-variabler"><i class="fa fa-check"></i><b>2.5</b> Samband mellan variabler</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="visualisering.html"><a href="visualisering.html#spridningsdiagram"><i class="fa fa-check"></i><b>2.5.1</b> Spridningsdiagram</a></li>
+<li class="chapter" data-level="2.5.2" data-path="visualisering.html"><a href="visualisering.html#linjediagram"><i class="fa fa-check"></i><b>2.5.2</b> Linjediagram</a></li>
+<li class="chapter" data-level="2.5.3" data-path="visualisering.html"><a href="visualisering.html#punktdiagramsmatris"><i class="fa fa-check"></i><b>2.5.3</b> Punktdiagramsmatris</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html"><i class="fa fa-check"></i><b>3</b> Beskrivande statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#matematiska-funktioner"><i class="fa fa-check"></i><b>3.1</b> Matematiska funktioner</a></li>
+<li class="chapter" data-level="3.2" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#fördelningar"><i class="fa fa-check"></i><b>3.2</b> Fördelningar</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#normalfördelningen"><i class="fa fa-check"></i><b>3.2.1</b> Normalfördelningen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html"><i class="fa fa-check"></i><b>4</b> Statistisk inferens</a><ul>
+<li class="chapter" data-level="4.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-en-population"><i class="fa fa-check"></i><b>4.1</b> Inferens i en population</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#medelvärden-mu"><i class="fa fa-check"></i><b>4.1.1</b> Medelvärden, <span class="math inline">\(\mu\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-två-populationer"><i class="fa fa-check"></i><b>4.2</b> Inferens i två populationer</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#medelvärden-mu-1"><i class="fa fa-check"></i><b>4.2.1</b> Medelvärden, <span class="math inline">\(\mu\)</span></a></li>
+<li class="chapter" data-level="4.2.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametriska-test"><i class="fa fa-check"></i><b>4.2.2</b> Icke-parametriska test</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#jämförelse-mellan-fler-än-två-grupper"><i class="fa fa-check"></i><b>4.3</b> Jämförelse mellan fler än två grupper</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#envägs-anova"><i class="fa fa-check"></i><b>4.3.1</b> Envägs-ANOVA</a></li>
+<li class="chapter" data-level="4.3.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametrisk-metod"><i class="fa fa-check"></i><b>4.3.2</b> Icke-parametrisk metod</a></li>
+<li class="chapter" data-level="4.3.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#tvåvägs-anova"><i class="fa fa-check"></i><b>4.3.3</b> Tvåvägs-ANOVA</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NDAB02 Material</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualisering" class="section level1">
+<h1><span class="header-section-number">2</span> Visualisering</h1>
+<div id="varför-är-visualisering-viktigt" class="section level2">
+<h2><span class="header-section-number">2.1</span> Varför är visualisering viktigt?</h2>
+<p><em>“En bild säger mer än tusen ord”</em> är ett vanligt förekommande ordspråk som innehåller mycket sanning. Speciellt när det kommer till information används visualiseringar i olika former för att på ett effektivt och tydligt sätt förmedla stora mängder data som hade varit svårare att uppfatta som enskilda siffror.</p>
+<p>Visualisering ger en statistiker möjlighet att lära känna sitt datamaterial innan mer djupgående analys påbörjas. Med mycket data är det oftast svårt få grepp om sina variabler och observationer. Frågor som; “vad är sambandet mellan mina variabler?” eller “finns det några felaktigheter i materialet?” blir mycket enklare att besvara med hjälp av visualiseringar.</p>
+<p>Om du ska presentera något banbrytande för dina kollegor eller chefer måste du på något sätt kunna sammanfatta resultatet på ett lättförståeligt och tydligt sätt. Visualiseringar är ett verktyg som ger många möjligheter att komprimera informationen som ska förmedlas.</p>
+</div>
+<div id="grundläggande-begrepp" class="section level2">
+<h2><span class="header-section-number">2.2</span> Grundläggande begrepp</h2>
+<p>Ett diagram innehåller olika delar som kommer refereras i resterande text. Här följer en kortare ordlista:</p>
+<ul>
+<li><strong>Diagramyta</strong>: Det område som innehåller all information tillhörande en visualisering</li>
+<li><strong>Rityta</strong>: Det område som innehåller det faktiska data som visualiseras</li>
+<li><strong>Axel</strong>: Kanterna som begränsar ritytan, ofta benämnt som x- och y-axel för den vågräta ( - ) respektive lodräta ( | ) axeln</li>
+<li><strong>Axelförklaring</strong>: En rubrik som beskriver vad den angivna axeln visar för information</li>
+<li><strong>Skalvärden</strong>: Steg som anger specifika värden på den angivna axeln</li>
+<li><strong>Stödlinjer</strong>: Linjer vilka agerar som en förlängning av axlarnas skalvärden i bakgrunden av ritytan</li>
+<li><strong>Titel/rubrik</strong>: En rubrik för diagrammet</li>
+<li><strong>Källhänvisning</strong>: En text placerade i någon av de nedre hörnen som anger en källa för det visualiserade datamaterialet om sådan finns</li>
+</ul>
+</div>
+<div id="ett-bra-diagram" class="section level2">
+<h2><span class="header-section-number">2.3</span> Ett bra diagram</h2>
+<p>För att skapa ett bra diagram behöver man tänka på några olika saker.</p>
+<p>Vilken typ av variabel som ska visualiseras påverkar huruvida ett diagram är tydligt eller inte. Samma sorts diagram kan mycket enkelt och tydligt visualisera en kvalitativ variabel men visualiserar kvantitativa variabler värdelöst…</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="_main_files/figure-html/unnamed-chunk-5-1.png" alt="Exempel på stapeldiagram för en kvalitativ (t.vä.) och kvantitativ (t.hö.) variabel" width="768" />
+<p class="caption">
+Figur 2.1: Exempel på stapeldiagram för en kvalitativ (t.vä.) och kvantitativ (t.hö.) variabel
+</p>
+</div>
+<p>Ritytan innehåller den information som ska förmedlas och bör därför få ta upp majoriteten av platsen i ett diagram. Om man anger för stora rubriker blir det lätt att man inkräktar på ritytan. Detsamma gäller om y-axeln innehåller långa skalvärdesnamn.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="_main_files/figure-html/unnamed-chunk-6-1.png" alt="Exempel på diagram med majoriteten rityta (t.vä.) och för liten rityta (t.hö.)" width="768" />
+<p class="caption">
+Figur 2.2: Exempel på diagram med majoriteten rityta (t.vä.) och för liten rityta (t.hö.)
+</p>
+</div>
+<p>Stödlinjer bör finnas för att underlätta utläsningen av information långt från respektive axel. Dessa bör dock inte ta över diagrammet utan enbart finnas i bakgrunden. Notera att stödlinjer kan komma att justera beroende på vilket sammanhang diagrammen används till. Beroende på upplösning, ljusstyrka eller andra skärmegenskaper kan ibland ljusa och smala linjer försvinna in i den vita bakgrunden. Då är tjockare och starkare stödlinjer befogat.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="_main_files/figure-html/unnamed-chunk-7-1.png" alt="Exempel på stödlinjer som ligger i bakgrunden (t.vä.) och stödlinjer som stjäl fokus från informationen (t.hö.)" width="768" />
+<p class="caption">
+Figur 2.3: Exempel på stödlinjer som ligger i bakgrunden (t.vä.) och stödlinjer som stjäl fokus från informationen (t.hö.)
+</p>
+</div>
+<p>Ett bra diagram har också läsbar text oavsett storleken på diagrammet. En bra referens kan vara att förhålla den minsta texten i diagrammet till ungefär samma storlek som brödtexten i rapporten eller presentationen. Försök att alltid tänka på att underlätta för läsaren!</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="_main_files/figure-html/unnamed-chunk-8-1.png" alt="Exempel på läsbar text (t.vä.) och på gränsen till för liten text (t.hö.)" width="768" />
+<p class="caption">
+Figur 2.4: Exempel på läsbar text (t.vä.) och på gränsen till för liten text (t.hö.)
+</p>
+</div>
+<p>Källhänvisning bör finnas i alla diagram där informationen är hämtat från någon annan källa än oss själva.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="_main_files/figure-html/unnamed-chunk-9-1.png" alt="Exempeldiagram med källhänvisning" width="384" />
+<p class="caption">
+Figur 2.5: Exempeldiagram med källhänvisning
+</p>
+</div>
+</div>
+<div id="visualisering-av-beskrivande-statistik" class="section level2">
+<h2><span class="header-section-number">2.4</span> Visualisering av beskrivande statistik</h2>
+<div id="stapeldiagram" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Stapeldiagram</h3>
+<p>Den absolut enklaste formen av visualisering är stapeldiagram. Denna diagramtyp består utav staplar vars höjd kommer från ett värde i datamaterialet, vanligtvis då man har en kvalitativ variabel och dess frekvenser (antalet av de olika arterna i diagrammen från tidigare kapitel), men diagramtypen kan också användas då man har en kvantitativ variabel uppdelad på en eller flera kvalitativa variabler (medellönen uppdelat på olika sektorer). Följande exempel kommer utgå från det första fallet.</p>
+<p>Olika programvaror kräver olika mycket bearbetning av datamaterialet innan diagrammet kan skapas. Vissa kräver att du själv skapar en frekvenstabell och anger att höjden av respektive stapel ska bestämmas av den tillhörande frekvensen, medan andra kan göra dessa beräkningar direkt på rådata.</p>
+<p>Som tidigare nämnt om R använder sig programmet av diverse paket som innehåller redan skapade funktioner för att lösa diverse arbetsuppgifter. För visualisering kommer vi använda oss främst av paketet <code>ggplot2</code> som bygger på vad som kallas för <em>grammar of graphics</em>. (<span class="citation">@ggplot2019</span>) Detta är ett försök till att formalisera ett språk för hur man enhetligt bör “skriva” visualiseringar och även SPSS använder sig av grunderna till detta språk. Det första steget för att få ta del av funktionerna är att ladda paketet till din R-session genom:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="visualisering.html#cb5-1"></a><span class="kw">require</span>(ggplot2)</span></code></pre></div>
+<p>Paketets visualiseringar utgår ifrån en <code>data.frame</code> vilket innebär att vi behöver ladda in ett datamaterial innan vi kan påbörja visualiseringarna. Detta kan göras med någon utav funktionerna <code>read.csv()</code>, <code>read.csv2()</code> osv. <strong>Se till att datamaterialet som laddats in ser ut som vi förväntar att det ska göra</strong>, exempelvis är decimaler korrekt angivna, har vi lika många variabler i R som i Excel och liknande. Med koden nedan kan datamaterialet som används som exempel genom hela denna text laddas in i R till objektet som kallas <code>exempeldata</code>. Vi kan även se hur materialet ser ut genom att använda <code>head()</code> som skriver ut ett antal observationer. Materialet ser ut att innehålla fem variabler, varav två är kvalitativa.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="visualisering.html#cb6-1"></a>exempeldata &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="dt">file =</span> <span class="st">&quot;732G45_exempeldata.csv&quot;</span>)</span>
+<span id="cb6-2"><a href="visualisering.html#cb6-2"></a></span>
+<span id="cb6-3"><a href="visualisering.html#cb6-3"></a><span class="kw">head</span>(exempeldata, <span class="dt">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##   civilstand alder   bil syskon   lon
+## 1        Par    26  Opel      0 26793
+## 2        Par    44  Ford      2 49588
+## 3        Par    34 Volvo      3 40461
+## 4        Par    33 Ingen      4 40299
+## 5        Par    32  Audi      3 36942</code></pre>
+<div id="grundkomponenter" class="section level4">
+<h4><span class="header-section-number">2.4.1.1</span> Grundkomponenter</h4>
+<p>Vi kan nu börja med att skapa stapeldiagrammet. Vi börjar med de tre grundkomponenterna av ett <code>ggplot</code>-diagram; <code>ggplot()</code>, <code>aes()</code> och <code>geom()</code>. Alla diagram måste innehålla dessa tre komponenter i någon form för att vi ska kunna producera något överhuvudtaget, sen kan vi lägga till andra instruktioner för att ändra diagrammet utseende.</p>
+<p>I <code>ggplot()</code> anges vilket datamaterial vi vill använda för visualiseringen:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="visualisering.html#cb8-1"></a><span class="kw">ggplot</span>(exempeldata)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Som vi ser skapas inget utifrån detta kommando, vi har bara sagt åt R att använda datamaterialet men inte vad den ska göra med det. Nästa steg är att ange vilka variabler vi vill använda för axlarna i diagrammet. När det kommer till stapeldiagram finns två olika sätt att göra; antingen har vi rådata och låter R räkna ut frekvensen av de olika kategorierna själv eller så skapar vi en egen frekvenstabell och anger <code>y = frekvens</code>. Vi kommer först börja med exemplet utifrån rådata:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visualisering.html#cb9-1"></a><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> bil)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Nu ser vi att R ritat ut de olika bilarna som finns i materialet på x-axeln, men vi har fortfarande inte sagt åt R vad vi vill att den ska göra med informationen vi ska visualisera. Den sista grundkomponenten är den som styr vilken diagramtyp vi skapar och i <code>ggplot2</code> finns många olika som vi kommer stöta på i denna text. För ett stapeldiagram anger vi <code>geom_bar()</code> från engelska termen <em>bar chart</em>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="visualisering.html#cb10-1"></a><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> bil) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>För att y-axeln ska visa relativa frekvenser istället för absoluta, kan vi i <code>geom_bar()</code> lägga till koden <code>aes(y = stat(count/sum(count)))</code>. Diagrammet ändrar sig inte i sin form, staplarna är fortfarande lika höga i relation till varandra, men tolkningar av detta diagram kan nu göras i andelar (procent) istället för antal.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visualisering.html#cb11-1"></a><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> bil) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">sum</span>(count))))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Med dessa grundkomponenter får vi fram ett diagram, men vi kan väl alla hålla med om att det i detta läge inte ser särskilt snyggt och tydligt ut. Ett snabbt och enkelt sätt att få till lite snyggare diagram är att använda någon utav <code>ggplot</code>s teman som finns tillgängliga genom olika <code>theme()</code>. Exempelvis är ett stilrent tema att utgå ifrån <code>theme_bw()</code> likt:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="visualisering.html#cb12-1"></a><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> bil) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">sum</span>(count)))) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Det är nu den största funktionaliteten med <code>ggplot2</code> kommer in. Vi kan spara instruktionerna vi gett åt R för att skapa diagrammet och senare lägga till fler instruktioner med andra funktioner genom att använda <code>+</code> på samma sätt som koderna ovan är skrivna. Vi sparar därför de nuvarande instruktionerna i ett objekt som vi kallar för <code>p</code> (vi kan döpa denna till vad som helst) likt:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="visualisering.html#cb13-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> bil) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">sum</span>(count)))) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p>Nu ligger alla instruktioner för <strong>hur</strong> R ska rita upp diagrammet sparat i <code>p</code> men för att R också ska producera diagrammet måste vi också säga det likt:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="visualisering.html#cb14-1"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Vi kan nu lägga till ytterligare funktioner exempelvis:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="visualisering.html#cb15-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">coord_flip</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>eller:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="visualisering.html#cb16-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span>percent)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Notera att diagrammet inte roterades i det andra diagrammet när vi ändrade hur skalvärdena på y-axeln ser ut. Detta är för att vi endast sagt åt R att rita diagrammet med vardera tillagda instruktion vid två olika tillfällen utan att ha sparat de någonstans. För att R ska spara dessa instruktioner tillsammans med grundkomponenterna vi angivit innan måste vi spara ovanstående kod till ett objekt:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="visualisering.html#cb17-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span>percent)</span>
+<span id="cb17-2"><a href="visualisering.html#cb17-2"></a></span>
+<span id="cb17-3"><a href="visualisering.html#cb17-3"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="sammanställd-data" class="section level5">
+<h5><span class="header-section-number">2.4.1.1.1</span> Sammanställd data</h5>
+<p>Om vi istället för rådata har sammanställd data exempelvis i form utav en frekvenstabell kan vi ändå skapa samma ovanstående diagram. Vi tänker oss att data om bilarna istället för de 64 observationerna är presenterad i följande tabell:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-23">Tabell 2.1: </span>Fördelning av bilmärken i urvalet
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Märke
+</th>
+<th style="text-align:right;">
+Frekvens
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Audi
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ford
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ingen
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nissan
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Opel
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Toyota
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Volkswagen
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Volvo
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+</tbody>
+</table>
+<p>Det som är viktigt är att vi fortfarande i R hanterar denna frekvenstabell som en <code>data.frame</code>, då <code>ggplot</code> kräver formatet för sina visualiseringar. Datamaterialet ser då istället ut som:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="visualisering.html#cb18-1"></a><span class="kw">head</span>(exempeltabell)</span></code></pre></div>
+<pre><code>##    Märke Frekvens
+## 1   Audi       11
+## 2   Ford        9
+## 3  Ingen        5
+## 4 Nissan       10
+## 5   Opel        4
+## 6 Toyota        5</code></pre>
+<p>För att skapa diagrammet som vi sett tidigare måste vi lägga till några argument i <code>aes()</code> och <code>geom_bar()</code> likt koden nedan. Argumentet <code>stat = "identity"</code> i <code>geom_bar()</code> krävs för att R ska räkna värdet på den angivna y-variabeln som höjden på stapeln.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="visualisering.html#cb20-1"></a><span class="kw">ggplot</span>(exempeltabell) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> Märke, <span class="dt">y =</span> Frekvens) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="färger" class="section level4">
+<h4><span class="header-section-number">2.4.1.2</span> Färger</h4>
+<p>Om vi vill ändra färgen på olika delar av diagrammet exempelvis staplarna kan vi göra detta inuti <code>geom_bar()</code> med argumenten <code>color</code> för kantlinjerna och <code>fill</code> för fyllnadsfärgen. För att se vilka färger som går att ange kan man köra funktionen <code>colors()</code> för deras namn eller hämta hem följande <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">PDF</a> som har färgerna utskrivna. Vi kommer senare titta närmare på färger och dess funktion i visualiseringar.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="visualisering.html#cb21-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> bil) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb21-2"><a href="visualisering.html#cb21-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">fill =</span> <span class="st">&quot;dark orange&quot;</span>,</span>
+<span id="cb21-3"><a href="visualisering.html#cb21-3"></a>           <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb21-4"><a href="visualisering.html#cb21-4"></a>           <span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">sum</span>(count)))) <span class="op">+</span></span>
+<span id="cb21-5"><a href="visualisering.html#cb21-5"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span>
+<span id="cb21-6"><a href="visualisering.html#cb21-6"></a></span>
+<span id="cb21-7"><a href="visualisering.html#cb21-7"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="stödlinjer" class="section level4">
+<h4><span class="header-section-number">2.4.1.3</span> Stödlinjer</h4>
+<p>Nu vill vi ändra lite stödlinjer så att de syns och hjälper till att förtydliga informationen vi vill visa. När det kommer till stapeldiagram behövs inte stödlinjer på x-axeln då staplarna sträcker sig hela vägen ner till dess skalvärden. Däremot behöver vi förtydliga skalvärdena på y-axeln. För att ändra utseendet på olika delar i ett diagram används <code>theme()</code> och diverse olika argument däri. Titta i dokumentationen för funktionen för att få en inblick i vad som kan ändras i diagrammet. Oftast ska dessa delar anges med en utav <code>element</code>-funktioner, beroende på typen som ska ändras. Text ändras med <code>element_text()</code>, linjer med <code>element_line()</code> och delar kan helt och hållet tas bort genom <code>element_blank()</code>. Nedanstående kod ändrar stödlinjerna på y-axelns färg till lite mörkare grå än standardvärdet (<code>panel.grid.major</code> för stödlinjerna som följer skalvärdena, <code>panel.grid.minor</code> för stödlinjer emellan skalvärdena) och tar bort stödlinjerna från x-axeln.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="visualisering.html#cb22-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb22-2"><a href="visualisering.html#cb22-2"></a>               <span class="dt">panel.grid.minor.x =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb22-3"><a href="visualisering.html#cb22-3"></a>               <span class="dt">panel.grid.major.y =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray70&quot;</span>),</span>
+<span id="cb22-4"><a href="visualisering.html#cb22-4"></a>               <span class="dt">panel.grid.minor.y =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray80&quot;</span>))</span>
+<span id="cb22-5"><a href="visualisering.html#cb22-5"></a></span>
+<span id="cb22-6"><a href="visualisering.html#cb22-6"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="text" class="section level4">
+<h4><span class="header-section-number">2.4.1.4</span> Text</h4>
+<p>Det som saknas just nu i diagrammet är tydligare (och större) text som förklarar de olika delarna av diagrammet för läsaren. De olika etiketterna kan alla anges i samma funktion genom olika argument likt:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="visualisering.html#cb23-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Bilmärke&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Andel&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Källa: Hietala (2019)&quot;</span>)</span>
+<span id="cb23-2"><a href="visualisering.html#cb23-2"></a></span>
+<span id="cb23-3"><a href="visualisering.html#cb23-3"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Det vi kan förhålla oss till när vi anger titeln för y-axeln är att den beskriver enheten som används för att mäta axelns skalvärden. Då vi i detta fall har värden mellan <span class="math inline">\(0\)</span> och <span class="math inline">\(1\)</span> bör vi ange <em>Andel</em> som titel. Om vi skulle haft absoulta frekvenser skulle en lämplig titel varit <em>Antal</em>. Om vi istället för andelar anger skalan i procent likt tidigare diagram kan det diskuteras huruvida det behövs en y-axeltitel eftersom enheten redan är angiven på skalan. Diagrammet skulle då kunna se ut som:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="visualisering.html#cb24-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span>percent) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Vi kan även ändra andra aspekter av textens <strong>utseende</strong> i diagrammet, exempelvis hur stor den är, dess rotation eller position. Detta görs med olika argument i <code>theme()</code>. Vi kan ändra utseendet på axeltexter med <code>axis.title</code>, skalvärden med <code>axis.text</code> och källhänvisningen med <code>plot.caption</code>. Alla dessa delar kräver instruktioner från <code>element_text()</code>-funktionen och där kan argument som:</p>
+<ul>
+<li><code>angle</code> styra rotationen,</li>
+<li><code>hjust</code> och <code>vjust</code> styra placeringen horisontellt respektive vertikalt,</li>
+<li><code>size</code> styra textstorleken,</li>
+<li><code>font</code> styra typsnittet,</li>
+<li><code>face</code> ange en eventuell fet- eller kursivmarkering av texten</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="visualisering.html#cb25-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;italic&quot;</span>),</span>
+<span id="cb25-2"><a href="visualisering.html#cb25-2"></a>               <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">size =</span> <span class="dv">11</span>),</span>
+<span id="cb25-3"><a href="visualisering.html#cb25-3"></a>               <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">11</span>),</span>
+<span id="cb25-4"><a href="visualisering.html#cb25-4"></a>               <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</span>
+<span id="cb25-5"><a href="visualisering.html#cb25-5"></a></span>
+<span id="cb25-6"><a href="visualisering.html#cb25-6"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="skalvärden" class="section level4">
+<h4><span class="header-section-number">2.4.1.5</span> Skalvärden</h4>
+<p>Ibland kan de automatiskt genererade axelskalorna medföra svårigheter att utläsa informationen som vi ska presentera. Därför är det sista vi kommer titta på funktioner för att ändra dessa skalor. Vilken funktion vi vill använda och hur man kan ändra utseendet påverkas av vilken sorts variabel som anges på den specifika axeln. Exempelvis kanske vi vill i diagrammet ändra så att den <strong>kontinuerliga</strong> y-axeln endast visar skalvärden var 10:e procent istället för var 5:e som nu sker. Detta gör vi då via:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="visualisering.html#cb26-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.10</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Argumentet <code>breaks = seq(from = 0, to = 1, by = .10)</code> anger att vi vill att värden (breaks) ska visas på specifika ställen på axeln. <code>seq()</code>-funktionen är ett snabbare sätt att skapa en vektor med lika steglängd mellan värden som vi använder för att skapa <code>c(0, 0.1, 0.2, 0.3, ..., 1)</code>. Notera att trots att vi anger värden som går hela vägen upp till 1, kommer inte diagrammet visa detta.</p>
+<p>Om vi skulle vilja visa en större del av axeln kan vi ange skalans gränser med <code>limits</code> likt koden nedan. Risken med detta är att vi skapar för mycket onödig tom rityta som minskar utrymmet för den information som vi vill presentera.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="visualisering.html#cb27-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.10</span>), </span>
+<span id="cb27-2"><a href="visualisering.html#cb27-2"></a>                       <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.35</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Något som dock är snyggt att göra med specifikt stapeldiagram är att ta bort den lilla yta som finns under alla staplar och låta y-axeln möta x-axeln vid <code>y = 0</code>. Detta kan vi göra med argumentet <code>expand = c(0,0)</code>, men då <strong>måste</strong> vi ange gränserna på skalan.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="visualisering.html#cb28-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.10</span>), </span>
+<span id="cb28-2"><a href="visualisering.html#cb28-2"></a>                            <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.25</span>),</span>
+<span id="cb28-3"><a href="visualisering.html#cb28-3"></a>                            <span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb28-4"><a href="visualisering.html#cb28-4"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="grupperat-stapeldiagram" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Grupperat stapeldiagram</h3>
+<p>Om vi har ett datamaterial bestående av flera kvalitativa variabler kan vi ibland vilja visualisera fördelningen av en variabel <strong>grupperat</strong> på en annan, exempelvis “Hur ser fördelningen av bilmärken ut, uppdelat på civilstånd?”. Det kanske finns några intressanta relationer mellan dessa två variabler som vi skulle vilja undersöka vidare, men som tidigare sagt är visualisering alltid det första steget för att lära känna sitt datamaterial.</p>
+<p>I vårt exempeldata har vi två kvalitativa variabler, <code>civilstand</code> och <code>bil</code>. För att visualisera ett grupperat stapeldiagram behöver vi välja en grupperings- och en fördelningsvariabel. Fördelninsgsvariabeln kommer grupperas över varje enskilda kategori från grupperingsvariabeln.</p>
+<p>I R måste vi ange grupperingsvariabeln likt det vi gjort tidigare som <code>x</code> och fördelningsvariabeln som <code>fill</code> inuti <code>aes()</code>. Detta kommer säga åt R att vardera värde på <code>bil</code> ska ha olika fyllnadsfärger. <code>position = "dodge"</code> bestämmer att staplarna ska ligga bredvid varandra och <code>position = "stack"</code> staplar de ovanpå varandra för ett s.k. stackat stapeldiagram.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="visualisering.html#cb29-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="visualisering.html#cb29-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> civilstand, <span class="dt">fill =</span> bil) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb29-3"><a href="visualisering.html#cb29-3"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb29-4"><a href="visualisering.html#cb29-4"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span>
+<span id="cb29-5"><a href="visualisering.html#cb29-5"></a></span>
+<span id="cb29-6"><a href="visualisering.html#cb29-6"></a>p </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>För relativa frekvenser i ett grupperat stapeldiagram kan vi summera de visualiserade staplarna på två olika sätt.</p>
+<ol style="list-style-type: decimal">
+<li>Antingen visar vi relativa frekvenser utifrån hela datamaterialet. Detta diagram kommer se exakt likadan ut som den med absoluta frekvenser men med andelar istället för antal. Vi använder samma kod som för det enkla stapeldiagrammet: <code>aes(y = stat(count/sum(count)))</code>.</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="visualisering.html#cb30-1"></a><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> civilstand, <span class="dt">fill =</span> bil) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb30-2"><a href="visualisering.html#cb30-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">sum</span>(count))), </span>
+<span id="cb30-3"><a href="visualisering.html#cb30-3"></a>           <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb30-4"><a href="visualisering.html#cb30-4"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Alternativet är att visa den relativa fördelningen grupperat på grupperingsvariabeln, alltså att vardera kategoris staplar summerar var för sig till 100 procent. Vi behöver då revidera koden som anger beräkningen till relativa frekvenser till: <code>aes(y = stat(count/tapply(count, x, sum)[x]))</code>.</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="visualisering.html#cb31-1"></a><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> civilstand, <span class="dt">fill =</span> bil) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb31-2"><a href="visualisering.html#cb31-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">tapply</span>(count, x, sum)[x])), </span>
+<span id="cb31-3"><a href="visualisering.html#cb31-3"></a>           <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb31-4"><a href="visualisering.html#cb31-4"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-37"></span>
+<img src="_main_files/figure-html/unnamed-chunk-37-1.png" alt="Grupperat stapeldiagram med enkel summering (t.vä.) och gruppvis summering (t.hö.) till 100 procent" width="768" />
+<p class="caption">
+Figur 2.6: Grupperat stapeldiagram med enkel summering (t.vä.) och gruppvis summering (t.hö.) till 100 procent
+</p>
+</div>
+<p>Tolkningarna på vardera av dessa diagram skiljer sig åt och valet styrs av vilken sorts frågeställning som vi vill besvara med visualiseringen. En jämförelse av gruppernas fördelning skulle bli tydlig med en gruppvis summering, medan presentation av fördelningen i materialet kan visualiseras med den enkla summeringen.</p>
+<div id="förtydliga-diagrammet" class="section level4">
+<h4><span class="header-section-number">2.4.2.1</span> Förtydliga diagrammet</h4>
+<p>Oavsett vilket sätt att summera staplarna som används ser de inte alls tydliga ut. Vi förtydligar till diagrammet med liknande hjälpfunktioner som tidigare stapeldiagram. Vi lägger till tydligare kantlinjer på staplarna, lägger till stödlinjer och etiketter, samt justerar utseendet på diverse texter samt ändrar skalan för y-axeln.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="visualisering.html#cb32-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb32-2"><a href="visualisering.html#cb32-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> civilstand, </span>
+<span id="cb32-3"><a href="visualisering.html#cb32-3"></a>      <span class="dt">fill =</span> bil) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb32-4"><a href="visualisering.html#cb32-4"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">stat</span>(count<span class="op">/</span><span class="kw">sum</span>(count))), </span>
+<span id="cb32-5"><a href="visualisering.html#cb32-5"></a>           <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>,</span>
+<span id="cb32-6"><a href="visualisering.html#cb32-6"></a>           <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb32-7"><a href="visualisering.html#cb32-7"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb32-8"><a href="visualisering.html#cb32-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb32-9"><a href="visualisering.html#cb32-9"></a>        <span class="dt">panel.grid.minor.x =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb32-10"><a href="visualisering.html#cb32-10"></a>        <span class="dt">panel.grid.major.y =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray70&quot;</span>),</span>
+<span id="cb32-11"><a href="visualisering.html#cb32-11"></a>        <span class="dt">panel.grid.minor.y =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray80&quot;</span>),</span>
+<span id="cb32-12"><a href="visualisering.html#cb32-12"></a>        <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;italic&quot;</span>),</span>
+<span id="cb32-13"><a href="visualisering.html#cb32-13"></a>        <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">size =</span> <span class="dv">11</span>),</span>
+<span id="cb32-14"><a href="visualisering.html#cb32-14"></a>        <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">11</span>),</span>
+<span id="cb32-15"><a href="visualisering.html#cb32-15"></a>        <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>)) <span class="op">+</span></span>
+<span id="cb32-16"><a href="visualisering.html#cb32-16"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Civilstånd&quot;</span>, </span>
+<span id="cb32-17"><a href="visualisering.html#cb32-17"></a>       <span class="dt">y =</span> <span class="st">&quot;Andel&quot;</span>, </span>
+<span id="cb32-18"><a href="visualisering.html#cb32-18"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: Hietala (2019)&quot;</span>) <span class="op">+</span></span>
+<span id="cb32-19"><a href="visualisering.html#cb32-19"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb32-20"><a href="visualisering.html#cb32-20"></a>                     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.20</span>, <span class="dt">by =</span> <span class="fl">0.05</span>),</span>
+<span id="cb32-21"><a href="visualisering.html#cb32-21"></a>                     <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.16</span>))</span>
+<span id="cb32-22"><a href="visualisering.html#cb32-22"></a></span>
+<span id="cb32-23"><a href="visualisering.html#cb32-23"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="färger-1" class="section level4">
+<h4><span class="header-section-number">2.4.2.2</span> Färger</h4>
+<p>Det som också urskiljer ett grupperat stapeldiagram med det skapades tidigare är att vi nu har en legend till höger av diagramytan som innehåller ytterligare information som krävs för att läsa av diagrammet. Vi har fått olika färger på den valda fördelningsvariabeln som kopplas samman till de olika kategorierna. Dessa vill vi nu ändra tillsammans med att ändra lite information i legenden för att göra den tydligare.</p>
+<p>För att skapa ett diagram som har en enhetlig och tydlig färgpalett kommer paketet <code>RColorBrewer</code> till användning. Ladda paketet med <code>require(RColorBrewer)</code> och titta på de olika färgkategorierna som finns att använda genom <code>display.brewer.all()</code>. Det rekommenderas att välja någon av de monokromatiska färgskalorna likt <code>"Oranges"</code> eller <code>"Purples"</code>.</p>
+<p>För att revidera utseendet på legenden och de använda färgerna används funktionen <code>scale_X_manual()</code> där <code>X</code> ersätts med den sorts gruppering som har gjorts för att skapa legenden, i detta fall <code>fill</code>. I <code>values</code> anges vilka färger som ska användas i diagrammet och där vill vi då använda någon palett från <code>RColorBrewer</code> genom <code>brewer.pal()</code>-funktionen. Argumentet <code>n</code> anger hur många färger vi vill ha och <code>name</code> anger vilker palett vi vill ta färgerna från.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="visualisering.html#cb33-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">name =</span> <span class="st">&quot;Bilmärke&quot;</span>,</span>
+<span id="cb33-2"><a href="visualisering.html#cb33-2"></a>                           <span class="dt">values =</span> <span class="kw">brewer.pal</span>(<span class="dt">n =</span> <span class="dv">8</span>,</span>
+<span id="cb33-3"><a href="visualisering.html#cb33-3"></a>                                               <span class="dt">name =</span> <span class="st">&quot;Oranges&quot;</span>))</span>
+<span id="cb33-4"><a href="visualisering.html#cb33-4"></a></span>
+<span id="cb33-5"><a href="visualisering.html#cb33-5"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="histogram" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Histogram</h3>
+<p>Om variabeln istället är kvantitativ och vi vill presentera fördelningen av denna variabel, är histogram (eller lådagram) lämpligt att använda.</p>
+<p>Likt tidigare diagram i R behöver vi först ange vilket datamaterial samt vilken variabel som vi ska visualisera.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="visualisering.html#cb34-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(alder)</span></code></pre></div>
+<p>När väl det är gjort måste vi på samma sätt som tidigare ange vilken form av visualisering som ska göras. För histogram använder vi <code>geom_histogram()</code>, med argumentet <code>bin</code> som styr hur många klassintervall vi vill ha. Om vi istället vill ange hur breda intervallen ska vara kan vi använda argumentet <code>binwidth</code>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="visualisering.html#cb35-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">fill =</span> <span class="st">&quot;orange&quot;</span>, </span>
+<span id="cb35-2"><a href="visualisering.html#cb35-2"></a>                        <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb35-3"><a href="visualisering.html#cb35-3"></a>                        <span class="dt">bins =</span> <span class="dv">10</span>)</span>
+<span id="cb35-4"><a href="visualisering.html#cb35-4"></a></span>
+<span id="cb35-5"><a href="visualisering.html#cb35-5"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Vi kan också snygga till diagrammet med alla funktioner som vi tidigare använt för stapeldiagram.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="visualisering.html#cb36-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="op">+</span></span>
+<span id="cb36-2"><a href="visualisering.html#cb36-2"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb36-3"><a href="visualisering.html#cb36-3"></a>                       <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
+<span id="cb36-4"><a href="visualisering.html#cb36-4"></a>                                    <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb36-5"><a href="visualisering.html#cb36-5"></a>                                    <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb36-6"><a href="visualisering.html#cb36-6"></a>                     <span class="dt">plot.title =</span> </span>
+<span id="cb36-7"><a href="visualisering.html#cb36-7"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb36-8"><a href="visualisering.html#cb36-8"></a>                     <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb36-9"><a href="visualisering.html#cb36-9"></a>                       <span class="kw">element_blank</span>(),</span>
+<span id="cb36-10"><a href="visualisering.html#cb36-10"></a>                     <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb36-11"><a href="visualisering.html#cb36-11"></a>                       <span class="kw">element_blank</span>(),</span>
+<span id="cb36-12"><a href="visualisering.html#cb36-12"></a>                     <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb36-13"><a href="visualisering.html#cb36-13"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb36-14"><a href="visualisering.html#cb36-14"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
+<span id="cb36-15"><a href="visualisering.html#cb36-15"></a>       <span class="dt">x =</span> <span class="st">&quot;Ålder&quot;</span>, </span>
+<span id="cb36-16"><a href="visualisering.html#cb36-16"></a>       <span class="dt">title =</span> <span class="st">&quot;Fördelning av ålder&quot;</span>, </span>
+<span id="cb36-17"><a href="visualisering.html#cb36-17"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: Hietala (2019)&quot;</span>)</span>
+<span id="cb36-18"><a href="visualisering.html#cb36-18"></a></span>
+<span id="cb36-19"><a href="visualisering.html#cb36-19"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="lådagram" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Lådagram</h3>
+<p>Ett alternativ att presentera fördelningen för en kvantitativ variabel är lådagram. Denna visualiseringstyp lämpar sig bättre om det finns extremvärden i materialet då diagrammet utgår ifrån kvartiler.</p>
+<p>Vi börjar strukturera ett lådagram på samma sätt som vi gjorde med histogrammet, dock behöver vi använda ett knep för att R ska skapa ett snyggt diagram. I <code>aes()</code> måste <code>x = factor(0)</code> som är ett sätt för R att skapa en tom kategorisk variabel. Lådagrammet skapas med <code>geom_boxplot()</code>.</p>
+<p>För att ta bort onödiga skalvärden och axelförklaring för den tomma variabeln som vi skapat används värdet <code>NULL</code> på de argument som vi vill ta bort, exempelvis <code>breaks</code> i <code>scale_x_discrete()</code>.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="visualisering.html#cb37-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(<span class="dv">0</span>), <span class="dt">y =</span> alder) <span class="op">+</span></span>
+<span id="cb37-2"><a href="visualisering.html#cb37-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">fill =</span> <span class="st">&quot;orange&quot;</span>) <span class="op">+</span></span>
+<span id="cb37-3"><a href="visualisering.html#cb37-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>)</span>
+<span id="cb37-4"><a href="visualisering.html#cb37-4"></a></span>
+<span id="cb37-5"><a href="visualisering.html#cb37-5"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Snyggar till diagrammet som tidigare.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="visualisering.html#cb38-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb38-2"><a href="visualisering.html#cb38-2"></a>                              <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
+<span id="cb38-3"><a href="visualisering.html#cb38-3"></a>                                           <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb38-4"><a href="visualisering.html#cb38-4"></a>                                           <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb38-5"><a href="visualisering.html#cb38-5"></a>                            <span class="dt">plot.title =</span> </span>
+<span id="cb38-6"><a href="visualisering.html#cb38-6"></a>                              <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb38-7"><a href="visualisering.html#cb38-7"></a>                            <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb38-8"><a href="visualisering.html#cb38-8"></a>                              <span class="kw">element_blank</span>(),</span>
+<span id="cb38-9"><a href="visualisering.html#cb38-9"></a>                            <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb38-10"><a href="visualisering.html#cb38-10"></a>                              <span class="kw">element_blank</span>(),</span>
+<span id="cb38-11"><a href="visualisering.html#cb38-11"></a>                            <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb38-12"><a href="visualisering.html#cb38-12"></a>                              <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb38-13"><a href="visualisering.html#cb38-13"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Ålder&quot;</span>, </span>
+<span id="cb38-14"><a href="visualisering.html#cb38-14"></a>       <span class="dt">x =</span> <span class="ot">NULL</span>, </span>
+<span id="cb38-15"><a href="visualisering.html#cb38-15"></a>       <span class="dt">title =</span> <span class="st">&quot;Fördelning av ålder&quot;</span>, </span>
+<span id="cb38-16"><a href="visualisering.html#cb38-16"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: Hietala (2019)&quot;</span>)</span>
+<span id="cb38-17"><a href="visualisering.html#cb38-17"></a></span>
+<span id="cb38-18"><a href="visualisering.html#cb38-18"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="samband-mellan-variabler" class="section level2">
+<h2><span class="header-section-number">2.5</span> Samband mellan variabler</h2>
+<div id="spridningsdiagram" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Spridningsdiagram</h3>
+<p>När ett datamaterial innehåller flera variabler kan det vara intressant att undersöka vilka (om några) variabler har ett samband med varandra. Detta kan göras på olika sätt, men visualisering i ett spridningsdiagram är ett sätt som möjliggör att se många olika typer av samband mellan <strong>två</strong> variabler.</p>
+<p>Vi utgår ifrån tidigare datamaterial och fokuserar på de två kvantitativa variablerna <code>alder</code> och <code>lon</code> i <code>aes()</code>. Här bör vi välja variabler till de olika axlarna som medför en logisk tolkning av vilken variabel som förklarar den andra. Den förklarande variabeln, <code>x</code>, anser vi förklara responsvariabeln, <code>y</code>, och med dessa variabler är det mer logiskt att <code>alder</code> förklarar <code>lon</code> för en individ.</p>
+<p>För att skapa ett spridningsdiagram används <code>geom_point()</code>. Argument som kan vara av intresse i denna funktion är <code>color</code>, <code>shape</code> eller <code>size</code>.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="visualisering.html#cb39-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(exempeldata) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> alder, <span class="dt">y =</span> lon) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span>
+<span id="cb39-2"><a href="visualisering.html#cb39-2"></a></span>
+<span id="cb39-3"><a href="visualisering.html#cb39-3"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Som vanligt lägger vi till lite extra kod för att ändra utseendet av diagrammet. När det kommer till stödlinjer och spridningsdiagram är syftet med diagrammet att se helheten, det generella sambandet mellan variablerna, mer än specifika värden för enstaka observationer. Detta betyder att stödlinjerna riskerar att ta för mycket fokus från diagrammet istället för att tillföra tydlighet. En lösning på detta är att försvaga styrkan på linjerna eller helt ta bort dem.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="visualisering.html#cb40-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb40-2"><a href="visualisering.html#cb40-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb40-3"><a href="visualisering.html#cb40-3"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb40-4"><a href="visualisering.html#cb40-4"></a>          <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
+<span id="cb40-5"><a href="visualisering.html#cb40-5"></a>                       <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb40-6"><a href="visualisering.html#cb40-6"></a>                       <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb40-7"><a href="visualisering.html#cb40-7"></a>        <span class="dt">plot.title =</span> </span>
+<span id="cb40-8"><a href="visualisering.html#cb40-8"></a>          <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb40-9"><a href="visualisering.html#cb40-9"></a>        <span class="dt">plot.subtitle =</span> </span>
+<span id="cb40-10"><a href="visualisering.html#cb40-10"></a>          <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb40-11"><a href="visualisering.html#cb40-11"></a>        <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb40-12"><a href="visualisering.html#cb40-12"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb40-13"><a href="visualisering.html#cb40-13"></a>        <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb40-14"><a href="visualisering.html#cb40-14"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;light gray&quot;</span>),</span>
+<span id="cb40-15"><a href="visualisering.html#cb40-15"></a>        <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb40-16"><a href="visualisering.html#cb40-16"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb40-17"><a href="visualisering.html#cb40-17"></a>        <span class="dt">panel.grid.minor.y =</span> </span>
+<span id="cb40-18"><a href="visualisering.html#cb40-18"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;light gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb40-19"><a href="visualisering.html#cb40-19"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sambandet mellan ålder och lön&quot;</span>,</span>
+<span id="cb40-20"><a href="visualisering.html#cb40-20"></a>       <span class="dt">x =</span> <span class="st">&quot;Ålder&quot;</span>,</span>
+<span id="cb40-21"><a href="visualisering.html#cb40-21"></a>       <span class="dt">y =</span> <span class="st">&quot;Lön&quot;</span>,</span>
+<span id="cb40-22"><a href="visualisering.html#cb40-22"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: Hietala (2019)&quot;</span>)</span>
+<span id="cb40-23"><a href="visualisering.html#cb40-23"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Då vi pratar om samband är det naturligt att gå vidare till en statistisk metod som kallas för regression som mer i detalj beskriver sambandet mellan variabler. Vi kommer inte gå igenom det så mycket i denna kurs men vi kan fortfarande visualisera den skattade regressionslinje som fås med hjälp av en metod som kallas minsta kvadrat skattning. I R lägger vi till ett till <code>geom</code>-objekt till samma diagram. <code>method = lm</code> anger att vi vill skatta en linjär modell (<strong>l</strong>inear <strong>m</strong>odel) och <code>se = FALSE</code> anger att vi inte vill visa s.k. konfidensband.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="visualisering.html#cb41-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="visualisering-av-olika-datamaterial-i-samma-diagram" class="section level4">
+<h4><span class="header-section-number">2.5.1.1</span> Visualisering av olika datamaterial i samma diagram</h4>
+<p>Om extremvärden skulle finnas i datamaterialet kommer sambandet (och en inritad regressionslinje) riskera att förskjuta det generella samband som finns. Observera att det i praktiken inte är så lätt att bara plocka bort extremvärden från datamaterialet utan en djupare dykning i orsakerna till detta värde. Är extremvärden en felinmatning eller är det ett riktigt värde som är en del av målpopulationen? För att visa hur vi kan använda olika datamaterial i samma diagram kommer vi göra det naïva och plocka bort dessa.</p>
+<p>I detta skede av er utbildning rekommenderas att ni identifierar dessa punkter i diagrammet och manuellt tar bort dessa ur data i Excel, sparar en ny fil med nytt namn, och importerar detta nya material till R och sparar det som ett nytt objekt.</p>
+<p>Det första vi måste göra för att diagrammet ska bli tydligt är att skapa en grupp (och tillhörande legendrad) för vardera regressionslinje. Detta görs genom att använda <code>aes(color = "gruppnamn")</code> inuti <code>geom_smooth()</code>. Vi ser nu att en legend lagts till i diagrammet med det angivna namnet på linjen som vi skrivit.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="visualisering.html#cb43-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb43-2"><a href="visualisering.html#cb43-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;med_extrem&quot;</span>), </span>
+<span id="cb43-3"><a href="visualisering.html#cb43-3"></a>                  <span class="dt">method =</span> lm, </span>
+<span id="cb43-4"><a href="visualisering.html#cb43-4"></a>                  <span class="dt">se =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb43-5"><a href="visualisering.html#cb43-5"></a></span>
+<span id="cb43-6"><a href="visualisering.html#cb43-6"></a>p </span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-50-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>För att lägga till den nya regressionslinjen utan extremvärden anges i <code>geom_smooth()</code> ett nytt <code>data</code>-objekt. Linjen kommer då ritas med samma variabler som angivits innan men utgå från detta materials värden, som saknar de extremvärden som man kan urskilja i materialet.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="visualisering.html#cb45-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb45-2"><a href="visualisering.html#cb45-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">data =</span> exempeldata_extrem,</span>
+<span id="cb45-3"><a href="visualisering.html#cb45-3"></a>                  <span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;utan_extrem&quot;</span>),</span>
+<span id="cb45-4"><a href="visualisering.html#cb45-4"></a>                  <span class="dt">method =</span> lm,</span>
+<span id="cb45-5"><a href="visualisering.html#cb45-5"></a>                  <span class="dt">se =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb45-6"><a href="visualisering.html#cb45-6"></a>p</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
+## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Legenden kan behöva förtydligas lite och här får vi återigen användning av de gruppnamn som angetts tidigare i koden. Argumentet <code>name</code> ger en bättre titel på legenden och i <code>values</code> kan vi i vektorn säga specifikt vilka grupper som vi vill ha vissa färger likt <code>"gruppnamn" = "färg"</code>. Vi vill också ange bättre etiketter på dessa grupper och detta görs med <code>labels</code>-argumentet.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="visualisering.html#cb47-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb47-2"><a href="visualisering.html#cb47-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">name =</span> <span class="st">&quot;Datamaterial&quot;</span>,</span>
+<span id="cb47-3"><a href="visualisering.html#cb47-3"></a>                         <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;med_extrem&quot;</span> =<span class="st"> &quot;black&quot;</span>,</span>
+<span id="cb47-4"><a href="visualisering.html#cb47-4"></a>                                    <span class="st">&quot;utan_extrem&quot;</span> =<span class="st"> &quot;orange&quot;</span>),</span>
+<span id="cb47-5"><a href="visualisering.html#cb47-5"></a>                         <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;med_extrem&quot;</span> =<span class="st"> &quot;Hela materialet&quot;</span>,</span>
+<span id="cb47-6"><a href="visualisering.html#cb47-6"></a>                                    <span class="st">&quot;utan_extrem&quot;</span> =<span class="st"> &quot;Utan extremvärden&quot;</span>))</span>
+<span id="cb47-7"><a href="visualisering.html#cb47-7"></a></span>
+<span id="cb47-8"><a href="visualisering.html#cb47-8"></a>p</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
+## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="extra-visualisering" class="section level4">
+<h4><span class="header-section-number">2.5.1.2</span> Extra visualisering</h4>
+<p>Det kanske också kan vara intressant att peka ut vilka observationer som plockas bort vilket kan göras genom att skapa ytterligare ett datamaterial med <strong>enbart</strong> de valda extremvärdena. Vi kan då lägga till ett till <code>geom_point()</code> till diagrammet där vi ändrar <code>shape</code> till någon annan symbol som tydliggör att dessa har plockats bort.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="visualisering.html#cb49-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data =</span> exempeldata_extrem_points,</span>
+<span id="cb49-2"><a href="visualisering.html#cb49-2"></a>               <span class="dt">shape =</span> <span class="st">&quot;x&quot;</span>,</span>
+<span id="cb49-3"><a href="visualisering.html#cb49-3"></a>               <span class="dt">size =</span> <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
+## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="linjediagram" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Linjediagram</h3>
+<p>För att vi ska kunna skapa ett linjediagram över flera serier behöver vi importera data med grupperingskolumner. Även om vi enbart ska visualisera en serie är det bra att få in rutinen att representera data i R på detta sätt.</p>
+<p>Datamaterialet bör alltså se ut som följer:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-55">Tabell 2.2: </span>Första observationerna i datamaterialet med en grupperingsvariabel Region
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+År
+</th>
+<th style="text-align:left;">
+Region
+</th>
+<th style="text-align:right;">
+Antal
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+Hela landet
+</td>
+<td style="text-align:right;">
+331
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+Hela landet
+</td>
+<td style="text-align:right;">
+332
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+Hela landet
+</td>
+<td style="text-align:right;">
+371
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+Hela landet
+</td>
+<td style="text-align:right;">
+364
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+Hela landet
+</td>
+<td style="text-align:right;">
+364
+</td>
+</tr>
+</tbody>
+</table>
+<p>När materialet nu innehåller tre variabler (en som visar tid, en som visar vilken grupp värden och år tillhör, samt mätvärdet för den angivna gruppen och året) kan vi påbörja visualiseringen.</p>
+<p>Exempeldata innehåller information om antalet anmälda våldsbrott per 100 000 invånare i hela landet, Västernorrland och Östergötland och är hämtat från SCB.</p>
+<div id="en-tidsserie" class="section level4">
+<h4><span class="header-section-number">2.5.2.1</span> En tidsserie</h4>
+<p>Om endast en serie ska visualiseras kan vi plocka ut en grupp från det tidigare materialet och visualisera endast det. Vi gör detta med <code>filter()</code> från <code>dplyr</code>-paketet. Kodexemplet gör denna filtrering inuti <code>ggplot()</code> men vi skulle lika gärna skapa ett filtrerad data som sparas som ett nytt objekt och använda det senare i <code>ggplot()</code>.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="visualisering.html#cb51-1"></a><span class="co">## Anger att vi endast vill ha en del av data i diagrammet</span></span>
+<span id="cb51-2"><a href="visualisering.html#cb51-2"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb51-3"><a href="visualisering.html#cb51-3"></a><span class="st">  </span><span class="kw">ggplot</span>(</span>
+<span id="cb51-4"><a href="visualisering.html#cb51-4"></a>    <span class="kw">filter</span>(<span class="dt">.data =</span> tidsserie_exempel, Region <span class="op">==</span><span class="st"> &quot;Hela landet&quot;</span>)</span>
+<span id="cb51-5"><a href="visualisering.html#cb51-5"></a>    )</span></code></pre></div>
+<p>När vi nu sagt att endast en del av materialet ska visualiseras kan vi som tidigare ange <code>aes()</code> där vi nu måste ange både <code>x</code> och <code>y</code>. På x-axeln vill vi ha tiden, alltså <code>År</code> i vårt exempelmaterial, och y-axeln ska innehålla mätvärden, i detta fall variabeln <code>Antal</code>.</p>
+<p>För att skapa ett linjediagram används <code>geom_line()</code>. I den funktionen finns argument såsom <code>color</code>, <code>linetype</code>, <code>size</code> och liknande som kan användas för att ändra utseendet av diagrammet. Ibland kan linjen bli väldigt smal och svår att se men då kommer argumentet <code>size</code> väl till pass.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="visualisering.html#cb52-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb52-2"><a href="visualisering.html#cb52-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> År, <span class="dt">y =</span> Antal) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb52-3"><a href="visualisering.html#cb52-3"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark orange&quot;</span>, <span class="dt">size =</span> <span class="dv">1</span>) </span>
+<span id="cb52-4"><a href="visualisering.html#cb52-4"></a></span>
+<span id="cb52-5"><a href="visualisering.html#cb52-5"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Som tidigare ändrar vi det visuella och lägger till ytterligare förtydligande texter med liknande koder som innan. Till linjediagram vill vi ofta kunna se både lod- och vågräta avstånd vilket innebär att stödlinjer bör finnas åt båda hållen. Det kan dock vara av intresse att använda och ändra på <code>panel.grid.minor</code>-linjerna till en svagare färg för att göra skillnad på de olika stödlinjerna. I exemplet nedan används en mörkare grå färg för <code>panel.grid.major</code>.</p>
+<p>Något som också introducerats i nedanstående kod är <code>plot.subtitle</code> i <code>theme()</code> som styr egenskaper av undertiteln som i detta diagram kan vara bra för att förtydliga vilken region som materialet visar. Undertitelns text läggs till i <code>labs()</code> och <code>subtitle</code>-argumentet.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="visualisering.html#cb53-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb53-2"><a href="visualisering.html#cb53-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb53-3"><a href="visualisering.html#cb53-3"></a>                           <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
+<span id="cb53-4"><a href="visualisering.html#cb53-4"></a>                                        <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb53-5"><a href="visualisering.html#cb53-5"></a>                                        <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb53-6"><a href="visualisering.html#cb53-6"></a>                         <span class="dt">plot.title =</span> </span>
+<span id="cb53-7"><a href="visualisering.html#cb53-7"></a>                           <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb53-8"><a href="visualisering.html#cb53-8"></a>                         <span class="dt">plot.subtitle =</span> </span>
+<span id="cb53-9"><a href="visualisering.html#cb53-9"></a>                           <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb53-10"><a href="visualisering.html#cb53-10"></a>                         <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb53-11"><a href="visualisering.html#cb53-11"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb53-12"><a href="visualisering.html#cb53-12"></a>                         <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb53-13"><a href="visualisering.html#cb53-13"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb53-14"><a href="visualisering.html#cb53-14"></a>                         <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb53-15"><a href="visualisering.html#cb53-15"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb53-16"><a href="visualisering.html#cb53-16"></a>                         <span class="dt">panel.grid.minor.y =</span> </span>
+<span id="cb53-17"><a href="visualisering.html#cb53-17"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb53-18"><a href="visualisering.html#cb53-18"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
+<span id="cb53-19"><a href="visualisering.html#cb53-19"></a>       <span class="dt">x =</span> <span class="st">&quot;År&quot;</span>, </span>
+<span id="cb53-20"><a href="visualisering.html#cb53-20"></a>       <span class="dt">title =</span> <span class="st">&quot;Antal anmälda våldsbrott per 100 000 invånare&quot;</span>, </span>
+<span id="cb53-21"><a href="visualisering.html#cb53-21"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Hela landet&quot;</span>,</span>
+<span id="cb53-22"><a href="visualisering.html#cb53-22"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: SCB (2012)&quot;</span>)</span>
+<span id="cb53-23"><a href="visualisering.html#cb53-23"></a></span>
+<span id="cb53-24"><a href="visualisering.html#cb53-24"></a>p </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-58-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="flera-tidsserier" class="section level4">
+<h4><span class="header-section-number">2.5.2.2</span> Flera tidsserier</h4>
+<p>För att visualisera flera tidsserier i ett diagram kräver <code>ggplot2</code> att datamaterialet ska vara formaterad med en grupperingsvariabel. För att R ska göra skillnad på dessa olika grupper måste <code>group</code> och/eller <code>color</code> argumentet i <code>aes</code> innehålla den grupperingsvariabel som finns i data.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="visualisering.html#cb54-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(tidsserie_exempel) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb54-2"><a href="visualisering.html#cb54-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> År, </span>
+<span id="cb54-3"><a href="visualisering.html#cb54-3"></a>      <span class="dt">y =</span> Antal, </span>
+<span id="cb54-4"><a href="visualisering.html#cb54-4"></a>      <span class="dt">color =</span> Region, </span>
+<span id="cb54-5"><a href="visualisering.html#cb54-5"></a>      <span class="dt">group =</span> Region) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb54-6"><a href="visualisering.html#cb54-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>)  </span>
+<span id="cb54-7"><a href="visualisering.html#cb54-7"></a></span>
+<span id="cb54-8"><a href="visualisering.html#cb54-8"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Som tidigare kan vi nu ändra om flera aspekter av diagrammet men nu måste vi också ändra den legend som skapas från grupperna i <code>aes()</code>. När vi nu vill ändra linjefärger är det funktionen <code>scale_color_manual()</code> som ska användas, specifikt argumentet <code>values</code>.</p>
+<p>Problemet som vi kommer märka är att det är svårt att skapa en vektor med färger som är tydliga nog för olika situationer. Kodexemplet nedan försöker använda delar av <code>brewer.pal(palette = "Oranges")</code> tillsammans med en svart grundfärg för att bibehålla en färgstil.</p>
+<p><code>brewer.pal()</code>-funktionen försöker plocka färger från den angivna paletten som skiljer sig från varandra men att ange <code>n = 3</code> för de tre regionerna ger en alltför ljus färg som den första. Indexeringen <code>[-1]</code> plockar bort den första ljusa färgen och vi lägger istället till svart först i <code>values</code>-vektorn.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="visualisering.html#cb55-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb55-2"><a href="visualisering.html#cb55-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> </span>
+<span id="cb55-3"><a href="visualisering.html#cb55-3"></a>                           <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="kw">brewer.pal</span>(<span class="dt">n =</span> <span class="dv">3</span>, <span class="st">&quot;Oranges&quot;</span>)[<span class="op">-</span><span class="dv">1</span>])) <span class="op">+</span></span>
+<span id="cb55-4"><a href="visualisering.html#cb55-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb55-5"><a href="visualisering.html#cb55-5"></a>                       <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>,</span>
+<span id="cb55-6"><a href="visualisering.html#cb55-6"></a>                                    <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb55-7"><a href="visualisering.html#cb55-7"></a>                                    <span class="dt">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb55-8"><a href="visualisering.html#cb55-8"></a>                     <span class="dt">plot.title =</span> </span>
+<span id="cb55-9"><a href="visualisering.html#cb55-9"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb55-10"><a href="visualisering.html#cb55-10"></a>                     <span class="dt">plot.subtitle =</span> </span>
+<span id="cb55-11"><a href="visualisering.html#cb55-11"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb55-12"><a href="visualisering.html#cb55-12"></a>                     <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb55-13"><a href="visualisering.html#cb55-13"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb55-14"><a href="visualisering.html#cb55-14"></a>                     <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb55-15"><a href="visualisering.html#cb55-15"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb55-16"><a href="visualisering.html#cb55-16"></a>                     <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb55-17"><a href="visualisering.html#cb55-17"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb55-18"><a href="visualisering.html#cb55-18"></a>                     <span class="dt">panel.grid.minor.y =</span> </span>
+<span id="cb55-19"><a href="visualisering.html#cb55-19"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb55-20"><a href="visualisering.html#cb55-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
+<span id="cb55-21"><a href="visualisering.html#cb55-21"></a>       <span class="dt">x =</span> <span class="st">&quot;År&quot;</span>, </span>
+<span id="cb55-22"><a href="visualisering.html#cb55-22"></a>       <span class="dt">title =</span> <span class="st">&quot;Antal anmälda våldsbrott per 100 000 invånare&quot;</span>, </span>
+<span id="cb55-23"><a href="visualisering.html#cb55-23"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Jämförelse av riket och två län&quot;</span>,</span>
+<span id="cb55-24"><a href="visualisering.html#cb55-24"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: SCB (2012)&quot;</span>)</span>
+<span id="cb55-25"><a href="visualisering.html#cb55-25"></a></span>
+<span id="cb55-26"><a href="visualisering.html#cb55-26"></a>p </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-60-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="punktdiagramsmatris" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> Punktdiagramsmatris</h3>
+<p>För att skapa en punktdiagramsmatris (spridningsdiagramsmatris) i R behöver vi använda ytterligare ett paket, nämligen <code>GGally</code>. I detta paket finns funktionen <code>ggpairs()</code> som är (av författarna) skapat som som en samling <code>ggplot2</code>-instruktioner som möjliggör skapandet av flera spridningsdiagram inuti ett och samma diagram. Kom ihåg att ladda in detta nya paket i R innan vi fortsätter.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="visualisering.html#cb56-1"></a><span class="kw">require</span>(GGally)</span></code></pre></div>
+<p>Datamaterialet som används till detta exempel är ett utav de inbyggda materialen som finns i R, nämligen <code>iris</code>. Det innehåller fyra stycken kontinuerliga variabler som beskriver olika mått på blommor och ytterligare en kategorisk variabel som anger vilken art observationen tillhör. Datamaterialet ser ut som följer:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:iris">Tabell 2.3: </span>Första observationerna i Iris-data
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+3.1
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.0
+</td>
+<td style="text-align:right;">
+3.6
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<p><code>ggpairs()</code> kräver vissa argument för att kunna skapa ett diagram;</p>
+<ul>
+<li><code>data</code>, anger vilket datamaterial som vi vill visualisera,
+<ul>
+<li><code>columns</code>, anger vilka kolumner ur datamaterialet som ska visualiseras,</li>
+<li><code>title</code>, anger en titelrubrik för diagrammet,</li>
+<li><code>upper</code>, anger vad vi vill att den <em>övre diagonalen</em> ska visa för information,</li>
+<li><code>diag</code>, anger vad vi vill att <em>diagonalen</em> ska visa för information,</li>
+<li><code>lower</code>, anger vad vi vill att den <em>nedre diagonalen</em> ska visa för information,</li>
+<li><code>axisLabels</code>, anger inställningar för skalvärden i diagrammet.</li>
+</ul></li>
+</ul>
+<p>Notera att <code>upper</code>, <code>diag</code>, och <code>lower</code> måste ange sina argument i en <code>list()</code> där variabeltypen måste anges först. I detta exempel kommer vi behöva skriva <code>list(continuous = )</code> då variablerna är kontinuerliga. Gå in i dokumentationen för funktionen och i <em>Details</em> står vilka andra diagram som kan visualiseras i de olika områdena.</p>
+<p>Nedanstående kod kommer skapa ett diagram innehållande spridningsdiagram i den nedre diagonalen över de fyra kontinuerliga variablerna som ligger på position <code>1:4</code> i datamaterialet <code>iris</code>. Vi väljer också här att plocka bort skalvärden på axlarna då syftet med dessa diagram är att visa sambandet mellan variabler och inte specifika värden som variablerna eller observationer förhåller sig till. Att vi tar bort skalvärden möjliggör också en större rityta som behövs om vi har ett flertal variabler som ska visualiseras.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="visualisering.html#cb57-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggpairs</span>(<span class="dt">data =</span> iris,</span>
+<span id="cb57-2"><a href="visualisering.html#cb57-2"></a>             <span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb57-3"><a href="visualisering.html#cb57-3"></a>             <span class="dt">title =</span> <span class="st">&quot;Samband mellan mått på blommor&quot;</span>,</span>
+<span id="cb57-4"><a href="visualisering.html#cb57-4"></a>             <span class="dt">upper =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;points&quot;</span>),</span>
+<span id="cb57-5"><a href="visualisering.html#cb57-5"></a>             <span class="dt">diag =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blankDiag&quot;</span>),</span>
+<span id="cb57-6"><a href="visualisering.html#cb57-6"></a>             <span class="dt">lower =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blank&quot;</span>),</span>
+<span id="cb57-7"><a href="visualisering.html#cb57-7"></a>             <span class="dt">axisLabels =</span> <span class="st">&quot;none&quot;</span></span>
+<span id="cb57-8"><a href="visualisering.html#cb57-8"></a>             ) </span>
+<span id="cb57-9"><a href="visualisering.html#cb57-9"></a></span>
+<span id="cb57-10"><a href="visualisering.html#cb57-10"></a>p</span></code></pre></div>
+<pre><code>## plot: [1,1] [=====&gt;------------------------------------------------------------------------------------------] 6% est: 0s
+## plot: [1,2] [===========&gt;------------------------------------------------------------------------------------] 12% est: 0s
+## plot: [1,3] [=================&gt;------------------------------------------------------------------------------] 19% est: 0s
+## plot: [1,4] [=======================&gt;------------------------------------------------------------------------] 25% est: 0s
+## plot: [2,1] [=============================&gt;------------------------------------------------------------------] 31% est: 0s
+## plot: [2,2] [===================================&gt;------------------------------------------------------------] 38% est: 0s
+## plot: [2,3] [=========================================&gt;------------------------------------------------------] 44% est: 0s
+## plot: [2,4] [===============================================&gt;------------------------------------------------] 50% est: 0s
+## plot: [3,1] [=====================================================&gt;------------------------------------------] 56% est: 0s
+## plot: [3,2] [===========================================================&gt;------------------------------------] 62% est: 0s
+## plot: [3,3] [=================================================================&gt;------------------------------] 69% est: 0s
+## plot: [3,4] [=======================================================================&gt;------------------------] 75% est: 0s
+## plot: [4,1] [=============================================================================&gt;------------------] 81% est: 0s
+## plot: [4,2] [===================================================================================&gt;------------] 88% est: 0s
+## plot: [4,3] [=========================================================================================&gt;------] 94% est: 0s
+## plot: [4,4] [================================================================================================]100% est: 0s</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-62-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Som tur är finns det möjlighet att ändra vissa delar av diagrammet för att förtydliga vissa delar.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="visualisering.html#cb59-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb59-2"><a href="visualisering.html#cb59-2"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb59-3"><a href="visualisering.html#cb59-3"></a></span>
+<span id="cb59-4"><a href="visualisering.html#cb59-4"></a>p</span></code></pre></div>
+<pre><code>## plot: [1,1] [=====&gt;------------------------------------------------------------------------------------------] 6% est: 0s
+## plot: [1,2] [===========&gt;------------------------------------------------------------------------------------] 12% est: 0s
+## plot: [1,3] [=================&gt;------------------------------------------------------------------------------] 19% est: 0s
+## plot: [1,4] [=======================&gt;------------------------------------------------------------------------] 25% est: 0s
+## plot: [2,1] [=============================&gt;------------------------------------------------------------------] 31% est: 0s
+## plot: [2,2] [===================================&gt;------------------------------------------------------------] 38% est: 0s
+## plot: [2,3] [=========================================&gt;------------------------------------------------------] 44% est: 0s
+## plot: [2,4] [===============================================&gt;------------------------------------------------] 50% est: 0s
+## plot: [3,1] [=====================================================&gt;------------------------------------------] 56% est: 0s
+## plot: [3,2] [===========================================================&gt;------------------------------------] 62% est: 0s
+## plot: [3,3] [=================================================================&gt;------------------------------] 69% est: 0s
+## plot: [3,4] [=======================================================================&gt;------------------------] 75% est: 0s
+## plot: [4,1] [=============================================================================&gt;------------------] 81% est: 0s
+## plot: [4,2] [===================================================================================&gt;------------] 88% est: 0s
+## plot: [4,3] [=========================================================================================&gt;------] 94% est: 0s
+## plot: [4,4] [================================================================================================]100% est: 0s</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="färgläggning-av-observationer-beroende-på-klass" class="section level4">
+<h4><span class="header-section-number">2.5.3.1</span> Färgläggning av observationer beroende på klass</h4>
+<p>Det kan finnas tillfällen där samband mellan variabler ser olika ut beroende på en kategorisk variabel som inkluderas i datamaterialet. Detta <em>kan</em> också inkluderas i dessa diagram, men risken är att det blir för mycket information som trycks ihop på en för liten yta. Tyvärr finns inte ett enkelt sätt att ändra dessa färger eller skapa en legend som tydligt beskriver vilken färg som hör till vilken kategori…</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="visualisering.html#cb61-1"></a><span class="kw">ggpairs</span>(<span class="dt">data =</span> iris,</span>
+<span id="cb61-2"><a href="visualisering.html#cb61-2"></a>        <span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb61-3"><a href="visualisering.html#cb61-3"></a>        <span class="dt">title =</span> <span class="st">&quot;Samband mellan mått på blommor&quot;</span>,</span>
+<span id="cb61-4"><a href="visualisering.html#cb61-4"></a>        <span class="dt">upper =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;points&quot;</span>),</span>
+<span id="cb61-5"><a href="visualisering.html#cb61-5"></a>        <span class="dt">diag =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blankDiag&quot;</span>),</span>
+<span id="cb61-6"><a href="visualisering.html#cb61-6"></a>        <span class="dt">lower =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blank&quot;</span>),</span>
+<span id="cb61-7"><a href="visualisering.html#cb61-7"></a>        <span class="dt">axisLabels =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb61-8"><a href="visualisering.html#cb61-8"></a>        <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">color =</span> Species)</span>
+<span id="cb61-9"><a href="visualisering.html#cb61-9"></a>        ) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb61-10"><a href="visualisering.html#cb61-10"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb61-11"><a href="visualisering.html#cb61-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<pre><code>## plot: [1,1] [=====&gt;------------------------------------------------------------------------------------------] 6% est: 0s
+## plot: [1,2] [===========&gt;------------------------------------------------------------------------------------] 12% est: 0s
+## plot: [1,3] [=================&gt;------------------------------------------------------------------------------] 19% est: 0s
+## plot: [1,4] [=======================&gt;------------------------------------------------------------------------] 25% est: 0s
+## plot: [2,1] [=============================&gt;------------------------------------------------------------------] 31% est: 0s
+## plot: [2,2] [===================================&gt;------------------------------------------------------------] 38% est: 0s
+## plot: [2,3] [=========================================&gt;------------------------------------------------------] 44% est: 0s
+## plot: [2,4] [===============================================&gt;------------------------------------------------] 50% est: 0s
+## plot: [3,1] [=====================================================&gt;------------------------------------------] 56% est: 0s
+## plot: [3,2] [===========================================================&gt;------------------------------------] 62% est: 0s
+## plot: [3,3] [=================================================================&gt;------------------------------] 69% est: 0s
+## plot: [3,4] [=======================================================================&gt;------------------------] 75% est: 0s
+## plot: [4,1] [=============================================================================&gt;------------------] 81% est: 0s
+## plot: [4,2] [===================================================================================&gt;------------] 88% est: 0s
+## plot: [4,3] [=========================================================================================&gt;------] 94% est: 0s
+## plot: [4,4] [================================================================================================]100% est: 0s</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduktion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="beskrivande-statistik.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"whatsapp": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

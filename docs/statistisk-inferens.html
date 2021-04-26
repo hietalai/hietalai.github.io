@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="sv" xml:lang="sv">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Statistisk inferens | NDAB02 Material</title>
+  <meta name="description" content="4 Statistisk inferens | NDAB02 Material" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Statistisk inferens | NDAB02 Material" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Statistisk inferens | NDAB02 Material" />
+  
+  
+  
+
+<meta name="author" content="Isak Hietala" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="beskrivande-statistik.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduktion.html"><a href="introduktion.html"><i class="fa fa-check"></i><b>1</b> Introduktion</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduktion.html"><a href="introduktion.html#r-och-rstudio"><i class="fa fa-check"></i><b>1.1</b> R och RStudio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduktion.html"><a href="introduktion.html#basic_R"><i class="fa fa-check"></i><b>1.1.1</b> Grundläggande programmering i R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduktion.html"><a href="introduktion.html#ladda-in-material"><i class="fa fa-check"></i><b>1.1.2</b> Ladda in material</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="visualisering.html"><a href="visualisering.html"><i class="fa fa-check"></i><b>2</b> Visualisering</a><ul>
+<li class="chapter" data-level="2.1" data-path="visualisering.html"><a href="visualisering.html#varför-är-visualisering-viktigt"><i class="fa fa-check"></i><b>2.1</b> Varför är visualisering viktigt?</a></li>
+<li class="chapter" data-level="2.2" data-path="visualisering.html"><a href="visualisering.html#grundläggande-begrepp"><i class="fa fa-check"></i><b>2.2</b> Grundläggande begrepp</a></li>
+<li class="chapter" data-level="2.3" data-path="visualisering.html"><a href="visualisering.html#ett-bra-diagram"><i class="fa fa-check"></i><b>2.3</b> Ett bra diagram</a></li>
+<li class="chapter" data-level="2.4" data-path="visualisering.html"><a href="visualisering.html#visualisering-av-beskrivande-statistik"><i class="fa fa-check"></i><b>2.4</b> Visualisering av beskrivande statistik</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="visualisering.html"><a href="visualisering.html#stapeldiagram"><i class="fa fa-check"></i><b>2.4.1</b> Stapeldiagram</a></li>
+<li class="chapter" data-level="2.4.2" data-path="visualisering.html"><a href="visualisering.html#grupperat-stapeldiagram"><i class="fa fa-check"></i><b>2.4.2</b> Grupperat stapeldiagram</a></li>
+<li class="chapter" data-level="2.4.3" data-path="visualisering.html"><a href="visualisering.html#histogram"><i class="fa fa-check"></i><b>2.4.3</b> Histogram</a></li>
+<li class="chapter" data-level="2.4.4" data-path="visualisering.html"><a href="visualisering.html#lådagram"><i class="fa fa-check"></i><b>2.4.4</b> Lådagram</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="visualisering.html"><a href="visualisering.html#samband-mellan-variabler"><i class="fa fa-check"></i><b>2.5</b> Samband mellan variabler</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="visualisering.html"><a href="visualisering.html#spridningsdiagram"><i class="fa fa-check"></i><b>2.5.1</b> Spridningsdiagram</a></li>
+<li class="chapter" data-level="2.5.2" data-path="visualisering.html"><a href="visualisering.html#linjediagram"><i class="fa fa-check"></i><b>2.5.2</b> Linjediagram</a></li>
+<li class="chapter" data-level="2.5.3" data-path="visualisering.html"><a href="visualisering.html#punktdiagramsmatris"><i class="fa fa-check"></i><b>2.5.3</b> Punktdiagramsmatris</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html"><i class="fa fa-check"></i><b>3</b> Beskrivande statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#matematiska-funktioner"><i class="fa fa-check"></i><b>3.1</b> Matematiska funktioner</a></li>
+<li class="chapter" data-level="3.2" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#fördelningar"><i class="fa fa-check"></i><b>3.2</b> Fördelningar</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#normalfördelningen"><i class="fa fa-check"></i><b>3.2.1</b> Normalfördelningen</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html"><i class="fa fa-check"></i><b>4</b> Statistisk inferens</a><ul>
+<li class="chapter" data-level="4.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-en-population"><i class="fa fa-check"></i><b>4.1</b> Inferens i en population</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#medelvärden-mu"><i class="fa fa-check"></i><b>4.1.1</b> Medelvärden, <span class="math inline">\(\mu\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-två-populationer"><i class="fa fa-check"></i><b>4.2</b> Inferens i två populationer</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#medelvärden-mu-1"><i class="fa fa-check"></i><b>4.2.1</b> Medelvärden, <span class="math inline">\(\mu\)</span></a></li>
+<li class="chapter" data-level="4.2.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametriska-test"><i class="fa fa-check"></i><b>4.2.2</b> Icke-parametriska test</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#jämförelse-mellan-fler-än-två-grupper"><i class="fa fa-check"></i><b>4.3</b> Jämförelse mellan fler än två grupper</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#envägs-anova"><i class="fa fa-check"></i><b>4.3.1</b> Envägs-ANOVA</a></li>
+<li class="chapter" data-level="4.3.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametrisk-metod"><i class="fa fa-check"></i><b>4.3.2</b> Icke-parametrisk metod</a></li>
+<li class="chapter" data-level="4.3.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#tvåvägs-anova"><i class="fa fa-check"></i><b>4.3.3</b> Tvåvägs-ANOVA</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NDAB02 Material</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statistisk-inferens" class="section level1">
+<h1><span class="header-section-number">4</span> Statistisk inferens</h1>
+<p>För att kunna dra slutsatser om den målpopulation som vi önskar att undersöka utifrån den mindre grupp enheter som vi samlat in information om, måste vi utföra någon form av inferens. Detta kapitel kommer innehålla många olika metoder och är främst strukturerad kring hur många populationer vi vill utföra inferensen på och sedan med avseende på vilken parameter.</p>
+<div id="inferens-i-en-population" class="section level2">
+<h2><span class="header-section-number">4.1</span> Inferens i en population</h2>
+<p>När vi endast är intresserade av att undersöka en population (eller grupp).</p>
+<div id="medelvärden-mu" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Medelvärden, <span class="math inline">\(\mu\)</span></h3>
+<p>För inferens över medelvärden har vi följande krav som måste uppfyllas:</p>
+<ul>
+<li>Oberoende stickprov
+<ul>
+<li>Kan uppfyllas genom att ett Obundet Slumpmässigt Urval (OSU) har skett</li>
+</ul></li>
+<li>Stickprovsmedelvärdet, <span class="math inline">\(\bar{X}\)</span>, måste kunna anses vara normalfördelad
+<ul>
+<li>Kan uppfyllas med hjälp av Centrala Gränsvärdessatsen (CGS) om stickprovet är <em>nog stort</em>, där tumregeln är <span class="math inline">\(n &gt; 30\)</span>. CGS säger att ett medelvärde (eller summa) av lika fördelade variabler kommer vara approximativt normalfördelad i detta fall.</li>
+<li>Om stickprovet är litet måste istället mätvariabeln, <span class="math inline">\(X\)</span>, som är av intresse anses vara normalfördelad. Detta innebär att den transformation som sker till medelvärdet också kommer vara normalfördelad.</li>
+</ul></li>
+</ul>
+<div id="hypotesprövningar" class="section level4">
+<h4><span class="header-section-number">4.1.1.1</span> Hypotesprövningar</h4>
+<p>Vid en hypotesprövning av ett medelvärde utgår vi från den femstegsprocess som diskuterats under föreläsningarna. I följande exempel kommer vi titta på variabeln <code>Sepal.Length</code> från <a href="visualisering.html#tab:iris">2.3</a>.</p>
+<p>När vi formulerar våra hypoteser gäller det att transformera vad det är vi vill undersöka till matematiska uttryck. Vi behöver också se till att vi använder rätt matematisk symbol i mothypotesen för att testet ska genomföras på rätt sätt. Till skillnad från i SPSS kan vi i R styra vilken sorts mothypotes som vi vill undersöka.</p>
+<p>Vi använder oss utav funktionen <code>t.test()</code> som har följande argument som är av intresse:</p>
+<ul>
+<li><code>x</code> - anger vilken variabel som vi vill undersöka,</li>
+<li><code>alternative</code> - anger vilken sorts mothypotes som ska testas där värdena <code>"two.sided"</code>, <code>"less"</code> eller <code>"greater"</code>,</li>
+<li><code>mu</code> - anger det värde som vi vill testa, motsvarande <span class="math inline">\(\mu_0\)</span> i föreläsningarna,</li>
+<li><code>conf.level</code> - anger konfidensgraden för testet, angivet i decimalform.</li>
+</ul>
+<p>Exempelvis skulle vi vara intresserade av att undersöka ifall genomsnittslängden av blommornas foderblad (<code>Sepal.Length</code> från iris-data) överstiger 5 cm. Vi ställer då upp hypoteser enligt:</p>
+<p><span class="math display">\[\begin{align}
+H_0: \mu \le 5 \\
+H_a: \mu &gt; 5
+\end{align}\]</span></p>
+<p>Med en signifikansnivå på 5 procent blir funktionen som vi skriver i R som följer:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="statistisk-inferens.html#cb69-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, </span>
+<span id="cb69-2"><a href="statistisk-inferens.html#cb69-2"></a>       <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb69-3"><a href="statistisk-inferens.html#cb69-3"></a>       <span class="dt">mu =</span> <span class="dv">5</span>,</span>
+<span id="cb69-4"><a href="statistisk-inferens.html#cb69-4"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  iris$Sepal.Length
+## t = 12.473, df = 149, p-value &lt; 2.2e-16
+## alternative hypothesis: true mean is greater than 5
+## 95 percent confidence interval:
+##  5.731427      Inf
+## sample estimates:
+## mean of x 
+##  5.843333</code></pre>
+<p>I utskriften ser vi väldigt mycket information och, här ser vi en nackdel med R, att utskrifterna inte är tydligt strukturerade likt andra programvaror.</p>
+<p>Följande information kan utläsas ur de olika raderna:</p>
+<ul>
+<li>På första raden får vi information om vilken variabel som testet är gjort på.</li>
+<li>På andra raden får vi information från testet där <code>t</code> är den beräknade testvariabeln, <code>df</code> är frihetsgraderna i t-fördelningen, och <code>p-value</code> är p-värdet av testet.</li>
+<li>På tredje raden får vi information om vilken sorts mothypotes som har undersökts.</li>
+<li>På fjärde och femte raden fås ett beräknat konfidensintervall som skulle kunna användas för att besvara mothypotesen. I detta fall då vi har en mothypotes som är angiven som <span class="math inline">\(&gt;\)</span>, beräknas ett nedåt begränsat intervall.</li>
+<li>De sista raderna i utskriften anger beskrivande mått från stickprovet.</li>
+</ul>
+<p>För att kunna ta ett beslut från detta test kan vi direkt jämföra det beräknade p-värdet från utskriften med den angivna signifikansnivån. Om p-värdet är lägre kan vi förkasta <span class="math inline">\(H_0\)</span>, annars kan vi inte förkasta den.</p>
+</div>
+<div id="konfidensintervall" class="section level4">
+<h4><span class="header-section-number">4.1.1.2</span> Konfidensintervall</h4>
+<p>För intervallskattningar för ett medelvärde kan samma funktion som för hypotesprövningar, <code>t.test()</code>, användas där argumentet <code>alternative</code> anger vilken sorts intervall som beräknas. Notera att vi för enkelsidiga intervall måste ange den mothypotes som stämmer överens med begränsningen.</p>
+<p>Ett tips för att bedöma detta är att titta på formuleringen som används i <span class="math inline">\(H_a\)</span> och byta ut värdet som testas med den gräns som vi beräknar. Exempelvis skulle mothypotesen, “mindre än 5” (<span class="math inline">\(H_a: \mu &lt; 5\)</span>), resultera i ett uppåt begränsat intervall enligt:</p>
+<p><span class="math display">\[ 
+\mu &lt; \bar{x} + t_{\alpha(1); n-1} \cdot \frac{s}{\sqrt{n}}
+\]</span>
+som med R-kod beräknas med:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="statistisk-inferens.html#cb71-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, </span>
+<span id="cb71-2"><a href="statistisk-inferens.html#cb71-2"></a>       <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
+<span id="cb71-3"><a href="statistisk-inferens.html#cb71-3"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  iris$Sepal.Length
+## t = 86.425, df = 149, p-value = 1
+## alternative hypothesis: true mean is less than 0
+## 95 percent confidence interval:
+##     -Inf 5.95524
+## sample estimates:
+## mean of x 
+##  5.843333</code></pre>
+<p>I utskriften är vi endast intresserade av det beräknade konfidensintervallet vilket innebär att vi inte behöver ange något värde på <code>mu</code> eftersom det endast påverkar beräkningen av <span class="math inline">\(t_{test}\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="inferens-i-två-populationer" class="section level2">
+<h2><span class="header-section-number">4.2</span> Inferens i två populationer</h2>
+<p>För detta kapitel kommer exemplen använda sig av det inbyggda materialet <code>PlantGrowth</code>. Materialet innehåller information om skörden, mätt i den torkade vikten av växten, uppdelad på tre olika grupper, en kontroll och två olika behandlingar. Vi kommer i detta kapitel endast fokusera på de observationer som hör till de olika behandlingarna men kommer titta närmare på alla tre grupper senare. Ett nytt datamaterial innehållande bara de två behandlingarna skapas och döps till <code>TreatmentPlantGrowth</code></p>
+<p>Datamaterialet ser ut som följer:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:plant">Tabell 4.1: </span>Observerade skördar från växter med olika behandling
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+weight
+</th>
+<th style="text-align:left;">
+group
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+4.81
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.17
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.41
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.59
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.87
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.83
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.03
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.89
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.32
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.69
+</td>
+<td style="text-align:left;">
+trt1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.31
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.12
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.54
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.50
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.37
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.29
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.92
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.15
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.80
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.26
+</td>
+<td style="text-align:left;">
+trt2
+</td>
+</tr>
+</tbody>
+</table>
+<div id="medelvärden-mu-1" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Medelvärden, <span class="math inline">\(\mu\)</span></h3>
+<p>När vi vill jämföra medelvärden i <strong>två</strong> grupper behöver vi utöka de krav som gäller för metoderna:</p>
+<ul>
+<li>Oberoende <em>inom</em> vardera stickprov
+<ul>
+<li>Kan uppfyllas genom att OSU har skett</li>
+</ul></li>
+<li>Oberoende <em>mellan</em> stickproven
+<ul>
+<li>Om det har genomförts två separata OSU uppfylls detta</li>
+<li>Om grupperna inte anses påverka varandras mätvärden kan detta antas</li>
+</ul></li>
+<li>Stickprovsmedelvärdet, <span class="math inline">\(\bar{X}\)</span>, måste kunna anses vara normalfördelad <strong>för båda grupperna</strong>
+<ul>
+<li>Kan uppfyllas med hjälp av Centrala Gränsvärdessatsen (CGS) om stickprovet är <em>nog stort</em>, där tumregeln är <span class="math inline">\(n &gt; 30\)</span>. CGS säger att ett medelvärde (eller summa) av lika fördelade variabler kommer vara approximativt normalfördelad i detta fall.</li>
+<li>Om antalet i en grupp är litet måste istället mätvariabeln, <span class="math inline">\(X\)</span>, som är av intresse anses vara normalfördelad. Detta innebär att den transformation som sker till medelvärdet också kommer vara normalfördelad.</li>
+</ul></li>
+</ul>
+<div id="t.test" class="section level4">
+<h4><span class="header-section-number">4.2.1.1</span> t.test()</h4>
+<p>Likt för en population kommer funktionen <code>t.test()</code> användas för hypotesprövningar och konfidensintervall för jämförelser av två gruppers medelvärden. Vi lägger då till två ytterligare argument till dem som vi tidigare använt:</p>
+<ul>
+<li><code>y</code> - anger den andra variabeln som vi vill jämföra med <code>x</code>,</li>
+<li><code>var.equal</code> - anger om vi antar att variansen i de två grupperna anses lika (<code>TRUE</code>) eller ej (<code>FALSE</code>).</li>
+</ul>
+<p>I vårt exempeldata i <a href="statistisk-inferens.html#tab:plant">4.1</a> ser vi dock att vi har alla mätvärden i samma variabel, <code>weight</code>, och grupptillhörigheten i den andra variabeln, <code>group</code>. Detta innebär att vi måste ange variablerna på ett annat sätt i funktionen än <code>x</code> och <code>y</code>. Detta görs med två andra argument:</p>
+<ul>
+<li><code>formula</code> - anger med formen <code>mätvariabel ~ gruppvariabel</code> hur mätvärden ska grupperas och testas,</li>
+<li><code>data</code> - anger datamaterialet där variablerna finns.</li>
+</ul>
+<p>I följande kod testar vi huruvida medelvikten på skörden från de två behandlingarna skiljer sig åt.</p>
+<p>Notera att vi här gör ett antagande att vikten av en skörd antas vara normalfördelad då vi endast har 10 observationer från varje grupp och CGS kan inte tillämpas. Om vikten av en skörd är normalfördelad kommer också medelvärdet vara det.</p>
+<p>Vi gör också ett antagande om att variansen i mätvariabeln (vikt) hos de båda behandlingarna anses vara lika genom <code>var.equal = TRUE</code>. Detta antagande måste dock kunna motiveras.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="statistisk-inferens.html#cb73-1"></a><span class="kw">t.test</span>(<span class="dt">formula =</span> weight <span class="op">~</span><span class="st"> </span>group,</span>
+<span id="cb73-2"><a href="statistisk-inferens.html#cb73-2"></a>       <span class="dt">data =</span> TreatmentPlantGrowth,</span>
+<span id="cb73-3"><a href="statistisk-inferens.html#cb73-3"></a>       <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb73-4"><a href="statistisk-inferens.html#cb73-4"></a>       <span class="dt">mu =</span> <span class="dv">0</span>,</span>
+<span id="cb73-5"><a href="statistisk-inferens.html#cb73-5"></a>       <span class="dt">var.equal =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb73-6"><a href="statistisk-inferens.html#cb73-6"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  weight by group
+## t = -3.0101, df = 18, p-value = 0.007518
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.4687336 -0.2612664
+## sample estimates:
+## mean in group trt1 mean in group trt2 
+##              4.661              5.526</code></pre>
+<p>När två grupper jämförs liknar utskriften mycket det som kom från ett enkelt t-test. Vi får samma information om testvariabel, frihetsgrader och p-värde, en indikation på vilket test det är som har utförts, och ett tillhörande konfidensintervall för skillnaden.</p>
+</div>
+<div id="parvisa-observationer" class="section level4">
+<h4><span class="header-section-number">4.2.1.2</span> Parvisa observationer</h4>
+<p>Om vi har samma enhet som mäts under två tidpunkter, eller om enheterna i de olika grupperna påverkar varandra på något sätt kommer inte kravet på oberoende <strong>mellan</strong> grupperna uppfyllas.</p>
+<p>I ett exempel (taget från <a href="http://www.sthda.com/english/wiki/paired-samples-t-test-in-r" class="uri">http://www.sthda.com/english/wiki/paired-samples-t-test-in-r</a>) mäts vikten av möss före och efter en okänd behandling. Materialet ser ut som följer:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:mice">Tabell 4.2: </span>Observerade vikter av möss före och efter en okänd behandling
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+before
+</th>
+<th style="text-align:right;">
+after
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+200.1
+</td>
+<td style="text-align:right;">
+392.9
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+190.9
+</td>
+<td style="text-align:right;">
+393.2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+192.7
+</td>
+<td style="text-align:right;">
+345.1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+213.0
+</td>
+<td style="text-align:right;">
+393.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+241.4
+</td>
+<td style="text-align:right;">
+434.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+196.9
+</td>
+<td style="text-align:right;">
+427.9
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+172.2
+</td>
+<td style="text-align:right;">
+422.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+185.5
+</td>
+<td style="text-align:right;">
+383.9
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+205.2
+</td>
+<td style="text-align:right;">
+392.3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+193.7
+</td>
+<td style="text-align:right;">
+352.2
+</td>
+</tr>
+</tbody>
+</table>
+<p>För att kunna utföra en jämförelse av dessa två gruppernas medelvärden måste vi först beräkna en differens mellan varje parvisa observation och sedan genomföra inferens för en population med hypoteser som ändå stämmer överens med undersökningen eller frågeställningen som man vill besvara. Som tur är kan <code>t.test()</code> beräkna detta automatiskt genom att ange ett nytt argument <code>paired = TRUE</code> i funktionen.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="statistisk-inferens.html#cb75-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> mice_data<span class="op">$</span>before,</span>
+<span id="cb75-2"><a href="statistisk-inferens.html#cb75-2"></a>       <span class="dt">y =</span> mice_data<span class="op">$</span>after,</span>
+<span id="cb75-3"><a href="statistisk-inferens.html#cb75-3"></a>       <span class="dt">paired =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  mice_data$before and mice_data$after
+## t = -20.883, df = 9, p-value = 6.2e-09
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -215.5581 -173.4219
+## sample estimates:
+## mean of the differences 
+##                 -194.49</code></pre>
+<p>I utskriften ändras egentligen bara titeln av utskriften gentemot utskriften från det föregående testet av oberoende grupper. Det är dock värt att notera att frihetsgraderna för testet beräknas korrekt utifrån att endast en grupp med differenser testas. Konfidensintervall finns också med i utskriften likt tidigare.</p>
+</div>
+</div>
+<div id="icke-parametriska-test" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Icke-parametriska test</h3>
+<p>Med biologiska data är det vanligt att endast ett fåtal observationer kan samlas in som innebär att inte Centrala Gränsvärdessatsen kan tillämpas för att uppfylla antagandet om en normalfördelad stickprovsstatistika. Vi kan i vissa fall inte heller motivera ett antagande om att mätvariabeln är normalfördelad och måste då frångå metoder som baserar sig på denna fördelning.</p>
+<div id="mann-whitney-test" class="section level4">
+<h4><span class="header-section-number">4.2.2.1</span> Mann-Whitney test</h4>
+<p>Om vi vill jämföra två stycken <strong>oberoende</strong> grupper kan ett Mann-Whitney-test användas där det enda kravet som måste uppfyllas är just dem om oberoende stickprov. Notera att de kontrolleras på samma sätt som för tidigare tester.</p>
+<p>Lite missledande i R är att detta test kallas för <code>wilcox.test()</code>. Argumenten som används i denna funktion är:</p>
+<ul>
+<li><code>x</code> - anger första variabeln,</li>
+<li><code>y</code> - anger andra variabeln,</li>
+<li><code>alternative</code> - anger vilken sorts mothypotes som ska undersökas,</li>
+<li><code>conf.level</code> - anger konfidensgraden för testet</li>
+<li><code>exact</code> - om ett exakt p-värde ska beräknas (det vill vi inte)</li>
+<li><code>correct</code> - om kontinuitetskorrektion ska användas vid normalapproximeringen av p-värdet</li>
+</ul>
+<p>Vi kan också ange grupperna som ska jämföras med <code>formula = mätvariabel ~ gruppvariabel</code> och <code>data = datamaterial</code> likt exemplet nedan.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="statistisk-inferens.html#cb77-1"></a><span class="kw">wilcox.test</span>(<span class="dt">formula =</span> weight <span class="op">~</span><span class="st"> </span>group,</span>
+<span id="cb77-2"><a href="statistisk-inferens.html#cb77-2"></a>            <span class="dt">data =</span> TreatmentPlantGrowth,</span>
+<span id="cb77-3"><a href="statistisk-inferens.html#cb77-3"></a>            <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb77-4"><a href="statistisk-inferens.html#cb77-4"></a>            <span class="dt">conf.level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb77-5"><a href="statistisk-inferens.html#cb77-5"></a>            <span class="dt">exact =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb77-6"><a href="statistisk-inferens.html#cb77-6"></a>            <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test
+## 
+## data:  weight by group
+## W = 16, p-value = 0.01017
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>Utskriften för detta test är inte lika informationsrik som dem som vi sett tidigare, men det är fortfarande p-värdet som vi är intresserade för beslutsfattande.</p>
+</div>
+<div id="wilcoxon-test" class="section level4">
+<h4><span class="header-section-number">4.2.2.2</span> Wilcoxon test</h4>
+<p>Vid parvisa tester av två <strong>beroende</strong> grupper där kravet om en normalfördelad statistika inte uppfylls kan ett Wilcoxon test beräknas istället. I R använder vi samma funktion som innan men måste här ange argumentet <code>paired = TRUE</code> för att funktionen ska utföra korrekt test.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="statistisk-inferens.html#cb79-1"></a><span class="kw">wilcox.test</span>(<span class="dt">x =</span> mice_data<span class="op">$</span>before,</span>
+<span id="cb79-2"><a href="statistisk-inferens.html#cb79-2"></a>            <span class="dt">y =</span> mice_data<span class="op">$</span>after,</span>
+<span id="cb79-3"><a href="statistisk-inferens.html#cb79-3"></a>            <span class="dt">paired =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb79-4"><a href="statistisk-inferens.html#cb79-4"></a>            <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb79-5"><a href="statistisk-inferens.html#cb79-5"></a>            <span class="dt">conf.level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb79-6"><a href="statistisk-inferens.html#cb79-6"></a>            <span class="dt">exact =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb79-7"><a href="statistisk-inferens.html#cb79-7"></a>            <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank test
+## 
+## data:  mice_data$before and mice_data$after
+## V = 0, p-value = 0.005062
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+</div>
+<div id="jämförelse-mellan-fler-än-två-grupper" class="section level2">
+<h2><span class="header-section-number">4.3</span> Jämförelse mellan fler än två grupper</h2>
+<p>När vi vill jämföra fler än två grupper behöver vi använda oss utav andra metoder för att detta ska ske korrekt. Dessa metoder kallas för ANOVA som betyder ANalysis Of VAriance och tittar specifikt på skillnader i varianserna inom och mellan grupperna. Om en sådan jämförelse visar på att skillnader finns är det av intresse att identifiera mellan vilka specifika grupper som skillnader råder. Då fler än två grupper ska jämföras fungerar inte de tidigare metoderna utan vi måste nu titta på <em>multipla jämförelser</em> för att undersöka detta. Vi kommer även titta på fall där kravet om normalfördelning inte uppfylls och frågan måste besvaras med icke-parametriska metoder.</p>
+<p>Vi kan även tillämpa ANOVA vid tillfällen då vi har flera faktorer som vi anser påverka mätvariabeln. Vi behöver endast använda <em>ett</em> test som samtidigt kan testa för skillnader mellan olika nivåer av respektive faktor samt ifall faktorerna verkar interagera med varandra.</p>
+<div id="envägs-anova" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Envägs-ANOVA</h3>
+<p>När vi vid tidigare metoder kontrollerade kraven som metoderna har var riskerna vid ett antagande om uppfyllda krav inte så stora. När vi ska använda oss av ANOVA-metoder <strong>måste</strong> följande krav vara uppfyllda, annars kommer slutsatserna som tas inte alls överensstämma med sanningen.</p>
+<ol style="list-style-type: decimal">
+<li><p>Oberoende måste råda <strong>både</strong> <em>inom</em> gruppernas observationer och <em>mellan</em> grupperna.</p></li>
+<li><p>Mätvariabeln för alla grupper måste verka vara normalfördelad <em>med lika varians</em>.</p></li>
+</ol>
+<p>Dessa krav är dock svårt att bedöma och inom denna kurs avgränsar vi oss endast till att veta att dessa krav finns, men kontrollerar dem inte.</p>
+<p>Notera att det finns metoder som inte antar lika varians men dessa tas inte upp i denna kurs.</p>
+<div id="f-test" class="section level4">
+<h4><span class="header-section-number">4.3.1.1</span> F-test</h4>
+<p>Ett F-test är en form av hypotesprövning där fler än två medelvärden jämförs. Detta betyder att samma fem*stegsprocess som presenterats tidigare i kursen kan användas. Notera att steg 1 om antaganden inte kommer fokuseras på.</p>
+<p>Hypoteserna som testas måste här visa att vi dels undersöker medelvärden, samt att vi undersöker ifall det råder en skillnad mellan dessa <span class="math inline">\(k\)</span> grupper.</p>
+<p><span class="math display">\[\begin{align*}
+
+H_0 &amp;: \mu_1 = \mu_2 = ... = \mu_k \\
+H_a &amp;: \text{Minst två av } \mu_i \text{ i } H_0 \text{ är olika}
+
+\end{align*}\]</span></p>
+<p>Alla värden som vi behöver för att kunna ta ett beslut om att förkasta eller inte förkasta den angivna <span class="math inline">\(H_0\)</span> tar vi från en ANOVA-tabell. Funktionen som används i R för att skapa denna tabell är <code>aov()</code>.</p>
+<div id="datastruktur" class="section level5">
+<h5><span class="header-section-number">4.3.1.1.1</span> Datastruktur</h5>
+<p>Innan vi kan gå in på funktionen måste vi strukturera data på ett sätt som möjliggör analys. Vi kommer nu använda den struktur som vi har sett tidigare med en kolumn som indikerar på mätvariabelns värde för varje observation och en grupperingskolumn som anger vilken faktornivå som varje observation tillhör.</p>
+<p>Exempelvis kan data se ut som följer:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:insects">Tabell 4.3: </span>Urval av observerade antalet insekter som hittas på områden som behandlas med olika bekämpningsmedel (spray)
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+count
+</th>
+<th style="text-align:left;">
+spray
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+D
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+D
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+E
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+E
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+E
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+F
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="aov" class="section level4">
+<h4><span class="header-section-number">4.3.1.2</span> <code>aov()</code></h4>
+<p>Funktionen har följande argument:</p>
+<ul>
+<li><code>formula</code> - anger strukturen av modellen med strukturen <code>mätvariabel ~ grupperingsvariabel</code>,</li>
+<li><code>data</code> - anger vilket datamaterial som ska analyseras.</li>
+</ul>
+<p>Om vi bara skulle köra funktionen likt vi har gjort vid tidigare metoder, kommer vi få en väldigt begränsad utskrift. Istället bör vi spara objektet som funktionen skapar till en ny variabel och använda andra funktioner för att hitta mer detaljerad information. I exemplet nedan sparas ANOVA-analysen i objektet <code>anova_insect</code>.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="statistisk-inferens.html#cb81-1"></a>anova_insect &lt;-<span class="st"> </span><span class="kw">aov</span>(<span class="dt">formula =</span> count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</span></code></pre></div>
+<p>För att få ut en ANOVA-tabell används funktionen <code>summary()</code>. Det är en funktion som sammanfattar olika objekt på olika sätt, och från <code>aov()</code> resulterar det i en ANOVA-tabell likt nedan.</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="statistisk-inferens.html#cb82-1"></a><span class="kw">summary</span>(anova_insect)</span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## spray        5   2669   533.8    34.7 &lt;2e-16 ***
+## Residuals   66   1015    15.4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Tabellen ser annorlunda ut jämfört med det som vi sett tidigare i SPSS, där den största skillnaden är att en rad för TOTAL saknas i R. Den är egentligen inte viktig då all information som behöver användas för F-testet finns ändå.</p>
+<p>I utskriften har vi frihetsgraderna (<code>Df</code>), kvadratsummorna SS (<code>Sum Sq</code>), medelkvadratsummorna MS (<code>Mean Sq</code>), F-testvariabeln (<code>F-value</code>) och p-värdet (<code>Pr(&gt;F)</code>).</p>
+<p>Notera att R använder sig av vetenskaplig notation vilket innebär att <code>e</code> motsvarar den matematiska beräkningen <code>10 upphöjt till</code>. I tabellen ovan anges p-värdet som &lt;2e-16 vilket egentligen blir <span class="math inline">\(2\cdot 10^{\text{-}16} = 0.0000000000000002\)</span>.</p>
+</div>
+<div id="multipla-jämförelser" class="section level4">
+<h4><span class="header-section-number">4.3.1.3</span> Multipla jämförelser</h4>
+<p>Om vi i F-testet kan förkasta <span class="math inline">\(H_0\)</span> till förmån för mothypotesen vet vi att det finns en skillnad mellan minst två medelvärden, men inte vilka. Det är nu intressant att göra jämförelser för att bedöma mellan vilka av de <span class="math inline">\(k\)</span> grupper, medelvärdena skiljer sig åt. Denna bedömning görs med metoder som kallas multipla jämförelser som parvist jämför alla grupper med en sammanlagd konfidensgrad.</p>
+<p>Dessa jämförelser beräknas i R med ett nytt paket, nämligen <code>multcomp</code>. Glöm inte att installera paketet genom <code>install.packages("multcomp")</code> och ladda in paketet genom <code>require(multcomp)</code>.</p>
+</div>
+<div id="tukey-test" class="section level4">
+<h4><span class="header-section-number">4.3.1.4</span> Tukey-test</h4>
+<p>Om vi är intresserade av att jämföra alla grupper i vår faktor (även kallad alla faktornivåer) bör vi beräkna <strong>Tukey</strong>-test. Funktionen för dessa beräkningar i R är <code>TukeyHSD()</code>.</p>
+<p>Det enda argument som behöver anges är <code>x</code> där vi anger det ANOVA-objekt som skapades innan. Vi kan också ändra familje-konfidensen (alltså den konfidensgrad som sammanlagt gäller) med argumentet <code>conf.level</code>.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="statistisk-inferens.html#cb84-1"></a><span class="kw">TukeyHSD</span>(<span class="dt">x =</span> anova_insect)</span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = count ~ spray, data = InsectSprays)
+## 
+## $spray
+##            diff        lwr       upr     p adj
+## B-A   0.8333333  -3.866075  5.532742 0.9951810
+## C-A -12.4166667 -17.116075 -7.717258 0.0000000
+## D-A  -9.5833333 -14.282742 -4.883925 0.0000014
+## E-A -11.0000000 -15.699409 -6.300591 0.0000000
+## F-A   2.1666667  -2.532742  6.866075 0.7542147
+## C-B -13.2500000 -17.949409 -8.550591 0.0000000
+## D-B -10.4166667 -15.116075 -5.717258 0.0000002
+## E-B -11.8333333 -16.532742 -7.133925 0.0000000
+## F-B   1.3333333  -3.366075  6.032742 0.9603075
+## D-C   2.8333333  -1.866075  7.532742 0.4920707
+## E-C   1.4166667  -3.282742  6.116075 0.9488669
+## F-C  14.5833333   9.883925 19.282742 0.0000000
+## E-D  -1.4166667  -6.116075  3.282742 0.9488669
+## F-D  11.7500000   7.050591 16.449409 0.0000000
+## F-E  13.1666667   8.467258 17.866075 0.0000000</code></pre>
+<p>Utskriften visar alla jämförelser i kolumnen längst till vänster och de efterföljande kolumnerna innehåller differensen i stickprovet, beräknade konfidensintervall, samt p-värdet för testet.</p>
+</div>
+<div id="dunnett-test" class="section level4">
+<h4><span class="header-section-number">4.3.1.5</span> Dunnett-test</h4>
+<p>Om vi har en kontrollgrupp som en av grupperna och vi har ett intresse av att <em>endast</em> jämföra alla andra grupper med denna kontrollgrupp bör vi beräkna <strong>Dunnett</strong>-test. Funktionen för detta test, <code>glht()</code>, är lite rörig så vi delar upp den i två steg.</p>
+<p>Funktionen kräver två argument:</p>
+<ul>
+<li><code>model</code> - anger det ANOVA-objekt som beräknats sedan tidigare,</li>
+<li><code>linfct</code> - anger vilken typ utav funktion (jämförelse) som ska beräknas.</li>
+</ul>
+<p>I <code>linfct</code> behöver vi ange <code>mcp(grupperingsvariabeln = "Dunnett")</code> där <code>mcp</code> står för <em>m</em>ultiple <em>c</em>om<em>p</em>arison.</p>
+<p>För att få information som kan användas för att bedöma ifall jämförelsen är signifikant måste vi använda <code>summary()</code> på objektet som skapas från denna funktion och det kan göras med hjälp av <code>%&gt;%</code> (som ett alternativ till det vi gjorde med <code>aov()</code>).</p>
+<p>Notera att kontrollgruppen antas vara den första gruppen som finns i materialet. För att ändra denna ordning kan funktionen <code>relevel(x = grupperingsvariabel, ref = "kontrollgrupp")</code> användas.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="statistisk-inferens.html#cb86-1"></a><span class="kw">glht</span>(<span class="dt">model =</span> anova_insect, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">spray =</span> <span class="st">&quot;Dunnett&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb86-2"><a href="statistisk-inferens.html#cb86-2"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: Dunnett Contrasts
+## 
+## 
+## Fit: aov(formula = count ~ spray, data = InsectSprays)
+## 
+## Linear Hypotheses:
+##            Estimate Std. Error t value Pr(&gt;|t|)    
+## B - A == 0   0.8333     1.6011   0.520    0.979    
+## C - A == 0 -12.4167     1.6011  -7.755   &lt;1e-04 ***
+## D - A == 0  -9.5833     1.6011  -5.985   &lt;1e-04 ***
+## E - A == 0 -11.0000     1.6011  -6.870   &lt;1e-04 ***
+## F - A == 0   2.1667     1.6011   1.353    0.526    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## (Adjusted p values reported -- single-step method)</code></pre>
+<p>Utkskriften innehåller i kolumnerna (från vänster till höger) vilka grupper som jämförs, skillnaden i mätvärden, medelfelet, testvariabeln, och till sist p-värdet.</p>
+</div>
+</div>
+<div id="icke-parametrisk-metod" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Icke-parametrisk metod</h3>
+<p>Om vi inte kan anta att materialet är normalfördelad kan vi istället för ett F-test beräkna ett icke-parametriskt test, som vi kallar för <strong>Kruskal-Wallis</strong>-test.</p>
+<p>Hypoteserna benämner vi med ord, inte någon parameter, och de kan se ut som följer:</p>
+<p><span class="math display">\[\begin{align*}
+
+H_0 &amp;: \text{Det finns inga skillnader mellan grupperna} \\
+H_a &amp;: \text{Det finns skillnader mellan grupperna}
+
+\end{align*}\]</span></p>
+<p>Funktionen som används för detta test är <code>kruskal.test()</code> och argumenten är samma som vi använde för F-testet tidigare, <code>formula</code> och <code>data</code>.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="statistisk-inferens.html#cb88-1"></a><span class="kw">kruskal.test</span>(<span class="dt">formula =</span> count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</span></code></pre></div>
+<pre><code>## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  count by spray
+## Kruskal-Wallis chi-squared = 54.691, df = 5, p-value = 1.511e-10</code></pre>
+<p>Från utskriften kan vi läsa ut ett p-värde (<code>p-value</code>) som sedan kan jämföras med signifikansnivån och ta ett beslut.</p>
+</div>
+<div id="tvåvägs-anova" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Tvåvägs-ANOVA</h3>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="statistisk-inferens.html#cb90-1"></a>anova_model &lt;-<span class="st"> </span><span class="kw">aov</span>(<span class="dt">formula =</span> len <span class="op">~</span><span class="st"> </span>supp <span class="op">*</span><span class="st"> </span>dose, <span class="dt">data =</span> ToothGrowth)</span>
+<span id="cb90-2"><a href="statistisk-inferens.html#cb90-2"></a></span>
+<span id="cb90-3"><a href="statistisk-inferens.html#cb90-3"></a><span class="kw">summary</span>(anova_model)</span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## supp         1  205.4   205.4  12.317 0.000894 ***
+## dose         1 2224.3  2224.3 133.415  &lt; 2e-16 ***
+## supp:dose    1   88.9    88.9   5.333 0.024631 *  
+## Residuals   56  933.6    16.7                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="beskrivande-statistik.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"whatsapp": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
