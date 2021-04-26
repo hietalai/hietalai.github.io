@@ -68,3 +68,5 @@ tukey-test
 dunnett-test
 icke-parametrisk-metod
 tvåvägs-anova
+regressionsmodeller
+inferens-i-regression

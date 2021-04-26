@@ -172,6 +172,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametrisk-metod"><i class="fa fa-check"></i><b>4.3.2</b> Icke-parametrisk metod</a></li>
 <li class="chapter" data-level="4.3.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#tvåvägs-anova"><i class="fa fa-check"></i><b>4.3.3</b> Tvåvägs-ANOVA</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#regressionsmodeller"><i class="fa fa-check"></i><b>4.4</b> Regressionsmodeller</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-regression"><i class="fa fa-check"></i><b>4.4.1</b> Inferens i regression</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -219,18 +222,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="beräkna-sannolikheter-från-givna-värden" class="section level4">
 <h4><span class="header-section-number">3.2.1.1</span> Beräkna sannolikheter från givna värden</h4>
 <p>Funktionen <code>pnorm()</code> används för att beräkna andelar eller sannolikheter för givna utfall som vi är intresserade av.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="beskrivande-statistik.html#cb63-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">1.96</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="beskrivande-statistik.html#cb55-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">1.96</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9750021</code></pre>
 <p>I exemplet ovan anger vi att vi vill beräkna uttrycket <span class="math inline">\(Pr(X \le 1.96)\)</span> där <span class="math inline">\(X \sim N(\mu = 0, \sigma = 1)\)</span>. Argumentet <code>lower.tail</code> som kan vara antingen <code>TRUE</code> eller <code>FALSE</code> anger vilket håll uttrycket ska beräknas.</p>
 <p>Om vi istället är intresserad av området till höger om <span class="math inline">\(1.96\)</span>, <span class="math inline">\(Pr(X &gt; 1.96)\)</span> behöver vi ändra i funktionen till:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="beskrivande-statistik.html#cb65-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">1.96</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="beskrivande-statistik.html#cb57-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">1.96</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0249979</code></pre>
 <p>Här kan vi alltså ange vilken normalfördelning som helst genom att ändra värden på argumenten <code>mean</code> och <code>sd</code>. Det som vi måste hålla reda på är vilken sida av fördelningen som är av intresse och ange värdet för <code>lower.tail</code> utefter. <em>Det är också med dessa funktioner som p-värden kan räknas ut.</em></p>
 </div>
 <div id="beräkna-värden-från-givna-sannolikheter" class="section level4">
 <h4><span class="header-section-number">3.2.1.2</span> Beräkna värden från givna sannolikheter</h4>
 <p>Funktionen <code>qnorm()</code> används när vi vill beräkna värden (tabellvärden) utifrån givna sannolikheter.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="beskrivande-statistik.html#cb67-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.025</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="beskrivande-statistik.html#cb59-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.025</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] -1.959964</code></pre>
 <p>I ovan exempel beräknar vi vilket värde (<span class="math inline">\(z\)</span>) från den standardiserade normalfördelningen som uppfyller uttrycket <span class="math inline">\(Pr(Z\le z) = 0.025\)</span>.</p>
 <p>Om vi istället är intresserade av ytor på den högra sidan av fördelningen kan vi likt tidigare ange <code>lower.tail = FALSE</code> och då få ett uttryck likt <span class="math inline">\(Pr(Z &gt; z) = 0.025\)</span> istället.</p>

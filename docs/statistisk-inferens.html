@@ -172,6 +172,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametrisk-metod"><i class="fa fa-check"></i><b>4.3.2</b> Icke-parametrisk metod</a></li>
 <li class="chapter" data-level="4.3.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#tvåvägs-anova"><i class="fa fa-check"></i><b>4.3.3</b> Tvåvägs-ANOVA</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#regressionsmodeller"><i class="fa fa-check"></i><b>4.4</b> Regressionsmodeller</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-regression"><i class="fa fa-check"></i><b>4.4.1</b> Inferens i regression</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -227,10 +230,10 @@ H_0: \mu \le 5 \\
 H_a: \mu &gt; 5
 \end{align}\]</span></p>
 <p>Med en signifikansnivå på 5 procent blir funktionen som vi skriver i R som följer:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="statistisk-inferens.html#cb69-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, </span>
-<span id="cb69-2"><a href="statistisk-inferens.html#cb69-2"></a>       <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
-<span id="cb69-3"><a href="statistisk-inferens.html#cb69-3"></a>       <span class="dt">mu =</span> <span class="dv">5</span>,</span>
-<span id="cb69-4"><a href="statistisk-inferens.html#cb69-4"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="statistisk-inferens.html#cb61-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, </span>
+<span id="cb61-2"><a href="statistisk-inferens.html#cb61-2"></a>       <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb61-3"><a href="statistisk-inferens.html#cb61-3"></a>       <span class="dt">mu =</span> <span class="dv">5</span>,</span>
+<span id="cb61-4"><a href="statistisk-inferens.html#cb61-4"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -261,9 +264,9 @@ H_a: \mu &gt; 5
 \mu &lt; \bar{x} + t_{\alpha(1); n-1} \cdot \frac{s}{\sqrt{n}}
 \]</span>
 som med R-kod beräknas med:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="statistisk-inferens.html#cb71-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, </span>
-<span id="cb71-2"><a href="statistisk-inferens.html#cb71-2"></a>       <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
-<span id="cb71-3"><a href="statistisk-inferens.html#cb71-3"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="statistisk-inferens.html#cb63-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, </span>
+<span id="cb63-2"><a href="statistisk-inferens.html#cb63-2"></a>       <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
+<span id="cb63-3"><a href="statistisk-inferens.html#cb63-3"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -494,12 +497,12 @@ trt2
 <p>I följande kod testar vi huruvida medelvikten på skörden från de två behandlingarna skiljer sig åt.</p>
 <p>Notera att vi här gör ett antagande att vikten av en skörd antas vara normalfördelad då vi endast har 10 observationer från varje grupp och CGS kan inte tillämpas. Om vikten av en skörd är normalfördelad kommer också medelvärdet vara det.</p>
 <p>Vi gör också ett antagande om att variansen i mätvariabeln (vikt) hos de båda behandlingarna anses vara lika genom <code>var.equal = TRUE</code>. Detta antagande måste dock kunna motiveras.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="statistisk-inferens.html#cb73-1"></a><span class="kw">t.test</span>(<span class="dt">formula =</span> weight <span class="op">~</span><span class="st"> </span>group,</span>
-<span id="cb73-2"><a href="statistisk-inferens.html#cb73-2"></a>       <span class="dt">data =</span> TreatmentPlantGrowth,</span>
-<span id="cb73-3"><a href="statistisk-inferens.html#cb73-3"></a>       <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
-<span id="cb73-4"><a href="statistisk-inferens.html#cb73-4"></a>       <span class="dt">mu =</span> <span class="dv">0</span>,</span>
-<span id="cb73-5"><a href="statistisk-inferens.html#cb73-5"></a>       <span class="dt">var.equal =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb73-6"><a href="statistisk-inferens.html#cb73-6"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="statistisk-inferens.html#cb65-1"></a><span class="kw">t.test</span>(<span class="dt">formula =</span> weight <span class="op">~</span><span class="st"> </span>group,</span>
+<span id="cb65-2"><a href="statistisk-inferens.html#cb65-2"></a>       <span class="dt">data =</span> TreatmentPlantGrowth,</span>
+<span id="cb65-3"><a href="statistisk-inferens.html#cb65-3"></a>       <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb65-4"><a href="statistisk-inferens.html#cb65-4"></a>       <span class="dt">mu =</span> <span class="dv">0</span>,</span>
+<span id="cb65-5"><a href="statistisk-inferens.html#cb65-5"></a>       <span class="dt">var.equal =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb65-6"><a href="statistisk-inferens.html#cb65-6"></a>       <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -615,9 +618,9 @@ after
 </tbody>
 </table>
 <p>För att kunna utföra en jämförelse av dessa två gruppernas medelvärden måste vi först beräkna en differens mellan varje parvisa observation och sedan genomföra inferens för en population med hypoteser som ändå stämmer överens med undersökningen eller frågeställningen som man vill besvara. Som tur är kan <code>t.test()</code> beräkna detta automatiskt genom att ange ett nytt argument <code>paired = TRUE</code> i funktionen.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="statistisk-inferens.html#cb75-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> mice_data<span class="op">$</span>before,</span>
-<span id="cb75-2"><a href="statistisk-inferens.html#cb75-2"></a>       <span class="dt">y =</span> mice_data<span class="op">$</span>after,</span>
-<span id="cb75-3"><a href="statistisk-inferens.html#cb75-3"></a>       <span class="dt">paired =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="statistisk-inferens.html#cb67-1"></a><span class="kw">t.test</span>(<span class="dt">x =</span> mice_data<span class="op">$</span>before,</span>
+<span id="cb67-2"><a href="statistisk-inferens.html#cb67-2"></a>       <span class="dt">y =</span> mice_data<span class="op">$</span>after,</span>
+<span id="cb67-3"><a href="statistisk-inferens.html#cb67-3"></a>       <span class="dt">paired =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -648,12 +651,12 @@ after
 <li><code>correct</code> - om kontinuitetskorrektion ska användas vid normalapproximeringen av p-värdet</li>
 </ul>
 <p>Vi kan också ange grupperna som ska jämföras med <code>formula = mätvariabel ~ gruppvariabel</code> och <code>data = datamaterial</code> likt exemplet nedan.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="statistisk-inferens.html#cb77-1"></a><span class="kw">wilcox.test</span>(<span class="dt">formula =</span> weight <span class="op">~</span><span class="st"> </span>group,</span>
-<span id="cb77-2"><a href="statistisk-inferens.html#cb77-2"></a>            <span class="dt">data =</span> TreatmentPlantGrowth,</span>
-<span id="cb77-3"><a href="statistisk-inferens.html#cb77-3"></a>            <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
-<span id="cb77-4"><a href="statistisk-inferens.html#cb77-4"></a>            <span class="dt">conf.level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb77-5"><a href="statistisk-inferens.html#cb77-5"></a>            <span class="dt">exact =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb77-6"><a href="statistisk-inferens.html#cb77-6"></a>            <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="statistisk-inferens.html#cb69-1"></a><span class="kw">wilcox.test</span>(<span class="dt">formula =</span> weight <span class="op">~</span><span class="st"> </span>group,</span>
+<span id="cb69-2"><a href="statistisk-inferens.html#cb69-2"></a>            <span class="dt">data =</span> TreatmentPlantGrowth,</span>
+<span id="cb69-3"><a href="statistisk-inferens.html#cb69-3"></a>            <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb69-4"><a href="statistisk-inferens.html#cb69-4"></a>            <span class="dt">conf.level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb69-5"><a href="statistisk-inferens.html#cb69-5"></a>            <span class="dt">exact =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb69-6"><a href="statistisk-inferens.html#cb69-6"></a>            <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum test
 ## 
@@ -665,13 +668,13 @@ after
 <div id="wilcoxon-test" class="section level4">
 <h4><span class="header-section-number">4.2.2.2</span> Wilcoxon test</h4>
 <p>Vid parvisa tester av två <strong>beroende</strong> grupper där kravet om en normalfördelad statistika inte uppfylls kan ett Wilcoxon test beräknas istället. I R använder vi samma funktion som innan men måste här ange argumentet <code>paired = TRUE</code> för att funktionen ska utföra korrekt test.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="statistisk-inferens.html#cb79-1"></a><span class="kw">wilcox.test</span>(<span class="dt">x =</span> mice_data<span class="op">$</span>before,</span>
-<span id="cb79-2"><a href="statistisk-inferens.html#cb79-2"></a>            <span class="dt">y =</span> mice_data<span class="op">$</span>after,</span>
-<span id="cb79-3"><a href="statistisk-inferens.html#cb79-3"></a>            <span class="dt">paired =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb79-4"><a href="statistisk-inferens.html#cb79-4"></a>            <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
-<span id="cb79-5"><a href="statistisk-inferens.html#cb79-5"></a>            <span class="dt">conf.level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb79-6"><a href="statistisk-inferens.html#cb79-6"></a>            <span class="dt">exact =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb79-7"><a href="statistisk-inferens.html#cb79-7"></a>            <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="statistisk-inferens.html#cb71-1"></a><span class="kw">wilcox.test</span>(<span class="dt">x =</span> mice_data<span class="op">$</span>before,</span>
+<span id="cb71-2"><a href="statistisk-inferens.html#cb71-2"></a>            <span class="dt">y =</span> mice_data<span class="op">$</span>after,</span>
+<span id="cb71-3"><a href="statistisk-inferens.html#cb71-3"></a>            <span class="dt">paired =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb71-4"><a href="statistisk-inferens.html#cb71-4"></a>            <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb71-5"><a href="statistisk-inferens.html#cb71-5"></a>            <span class="dt">conf.level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb71-6"><a href="statistisk-inferens.html#cb71-6"></a>            <span class="dt">exact =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb71-7"><a href="statistisk-inferens.html#cb71-7"></a>            <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon signed rank test
 ## 
@@ -726,7 +729,7 @@ spray
 <tbody>
 <tr>
 <td style="text-align:right;">
-7
+10
 </td>
 <td style="text-align:left;">
 A
@@ -742,34 +745,10 @@ A
 </tr>
 <tr>
 <td style="text-align:right;">
-16
+14
 </td>
 <td style="text-align:left;">
-B
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:left;">
-B
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:left;">
-C
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:left;">
-C
+A
 </td>
 </tr>
 <tr>
@@ -777,20 +756,44 @@ C
 7
 </td>
 <td style="text-align:left;">
-C
+B
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-1
+5
 </td>
 <td style="text-align:left;">
-C
+D
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-26
+6
+</td>
+<td style="text-align:left;">
+D
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+E
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
 </td>
 <td style="text-align:left;">
 F
@@ -816,9 +819,9 @@ F
 <li><code>data</code> - anger vilket datamaterial som ska analyseras.</li>
 </ul>
 <p>Om vi bara skulle köra funktionen likt vi har gjort vid tidigare metoder, kommer vi få en väldigt begränsad utskrift. Istället bör vi spara objektet som funktionen skapar till en ny variabel och använda andra funktioner för att hitta mer detaljerad information. I exemplet nedan sparas ANOVA-analysen i objektet <code>anova_insect</code>.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="statistisk-inferens.html#cb81-1"></a>anova_insect &lt;-<span class="st"> </span><span class="kw">aov</span>(<span class="dt">formula =</span> count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="statistisk-inferens.html#cb73-1"></a>anova_insect &lt;-<span class="st"> </span><span class="kw">aov</span>(<span class="dt">formula =</span> count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</span></code></pre></div>
 <p>För att få ut en ANOVA-tabell används funktionen <code>summary()</code>. Det är en funktion som sammanfattar olika objekt på olika sätt, och från <code>aov()</code> resulterar det i en ANOVA-tabell likt nedan.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="statistisk-inferens.html#cb82-1"></a><span class="kw">summary</span>(anova_insect)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="statistisk-inferens.html#cb74-1"></a><span class="kw">summary</span>(anova_insect)</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
 ## spray        5   2669   533.8    34.7 &lt;2e-16 ***
 ## Residuals   66   1015    15.4                   
@@ -837,7 +840,7 @@ F
 <h4><span class="header-section-number">4.3.1.4</span> Tukey-test</h4>
 <p>Om vi är intresserade av att jämföra alla grupper i vår faktor (även kallad alla faktornivåer) bör vi beräkna <strong>Tukey</strong>-test. Funktionen för dessa beräkningar i R är <code>TukeyHSD()</code>.</p>
 <p>Det enda argument som behöver anges är <code>x</code> där vi anger det ANOVA-objekt som skapades innan. Vi kan också ändra familje-konfidensen (alltså den konfidensgrad som sammanlagt gäller) med argumentet <code>conf.level</code>.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="statistisk-inferens.html#cb84-1"></a><span class="kw">TukeyHSD</span>(<span class="dt">x =</span> anova_insect)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="statistisk-inferens.html#cb76-1"></a><span class="kw">TukeyHSD</span>(<span class="dt">x =</span> anova_insect)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -873,8 +876,8 @@ F
 <p>I <code>linfct</code> behöver vi ange <code>mcp(grupperingsvariabeln = "Dunnett")</code> där <code>mcp</code> står för <em>m</em>ultiple <em>c</em>om<em>p</em>arison.</p>
 <p>För att få information som kan användas för att bedöma ifall jämförelsen är signifikant måste vi använda <code>summary()</code> på objektet som skapas från denna funktion och det kan göras med hjälp av <code>%&gt;%</code> (som ett alternativ till det vi gjorde med <code>aov()</code>).</p>
 <p>Notera att kontrollgruppen antas vara den första gruppen som finns i materialet. För att ändra denna ordning kan funktionen <code>relevel(x = grupperingsvariabel, ref = "kontrollgrupp")</code> användas.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="statistisk-inferens.html#cb86-1"></a><span class="kw">glht</span>(<span class="dt">model =</span> anova_insect, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">spray =</span> <span class="st">&quot;Dunnett&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb86-2"><a href="statistisk-inferens.html#cb86-2"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="statistisk-inferens.html#cb78-1"></a><span class="kw">glht</span>(<span class="dt">model =</span> anova_insect, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">spray =</span> <span class="st">&quot;Dunnett&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb78-2"><a href="statistisk-inferens.html#cb78-2"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
 <pre><code>## 
 ##   Simultaneous Tests for General Linear Hypotheses
 ## 
@@ -886,9 +889,9 @@ F
 ## Linear Hypotheses:
 ##            Estimate Std. Error t value Pr(&gt;|t|)    
 ## B - A == 0   0.8333     1.6011   0.520    0.979    
-## C - A == 0 -12.4167     1.6011  -7.755   &lt;1e-04 ***
-## D - A == 0  -9.5833     1.6011  -5.985   &lt;1e-04 ***
-## E - A == 0 -11.0000     1.6011  -6.870   &lt;1e-04 ***
+## C - A == 0 -12.4167     1.6011  -7.755   &lt;0.001 ***
+## D - A == 0  -9.5833     1.6011  -5.985   &lt;0.001 ***
+## E - A == 0 -11.0000     1.6011  -6.870   &lt;0.001 ***
 ## F - A == 0   2.1667     1.6011   1.353    0.526    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
@@ -907,7 +910,7 @@ H_a &amp;: \text{Det finns skillnader mellan grupperna}
 
 \end{align*}\]</span></p>
 <p>Funktionen som används för detta test är <code>kruskal.test()</code> och argumenten är samma som vi använde för F-testet tidigare, <code>formula</code> och <code>data</code>.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="statistisk-inferens.html#cb88-1"></a><span class="kw">kruskal.test</span>(<span class="dt">formula =</span> count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="statistisk-inferens.html#cb80-1"></a><span class="kw">kruskal.test</span>(<span class="dt">formula =</span> count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</span></code></pre></div>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
 ## 
@@ -917,9 +920,9 @@ H_a &amp;: \text{Det finns skillnader mellan grupperna}
 </div>
 <div id="tvåvägs-anova" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Tvåvägs-ANOVA</h3>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="statistisk-inferens.html#cb90-1"></a>anova_model &lt;-<span class="st"> </span><span class="kw">aov</span>(<span class="dt">formula =</span> len <span class="op">~</span><span class="st"> </span>supp <span class="op">*</span><span class="st"> </span>dose, <span class="dt">data =</span> ToothGrowth)</span>
-<span id="cb90-2"><a href="statistisk-inferens.html#cb90-2"></a></span>
-<span id="cb90-3"><a href="statistisk-inferens.html#cb90-3"></a><span class="kw">summary</span>(anova_model)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="statistisk-inferens.html#cb82-1"></a>anova_model &lt;-<span class="st"> </span><span class="kw">aov</span>(<span class="dt">formula =</span> len <span class="op">~</span><span class="st"> </span>supp <span class="op">*</span><span class="st"> </span>dose, <span class="dt">data =</span> ToothGrowth)</span>
+<span id="cb82-2"><a href="statistisk-inferens.html#cb82-2"></a></span>
+<span id="cb82-3"><a href="statistisk-inferens.html#cb82-3"></a><span class="kw">summary</span>(anova_model)</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## supp         1  205.4   205.4  12.317 0.000894 ***
 ## dose         1 2224.3  2224.3 133.415  &lt; 2e-16 ***
@@ -927,6 +930,66 @@ H_a &amp;: \text{Det finns skillnader mellan grupperna}
 ## Residuals   56  933.6    16.7                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+</div>
+<div id="regressionsmodeller" class="section level2">
+<h2><span class="header-section-number">4.4</span> Regressionsmodeller</h2>
+<p>När vi vill undersöka sambandet mellan två kontinuerliga variabler kan vi använda linjära regressionsmodeller. Exempelvis skulle vi vilja vara intresserade av att undersöka sambandet mellan <code>Petal.Width</code> och <code>Petal.Length</code> ur <code>iris</code> data (se <a href="visualisering.html#tab:iris">2.3</a>). Vi har i kapitel <a href="visualisering.html#spridningsdiagram">2.5.1</a> redan visat hur ett spridningsdiagram kan skapas för att visuellt undersöka hur sambandet ser ut.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="statistisk-inferens.html#cb84-1"></a><span class="kw">ggplot</span>(iris) <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> Petal.Width, <span class="dt">y =</span> Petal.Length) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb84-2"><a href="statistisk-inferens.html#cb84-2"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb84-3"><a href="statistisk-inferens.html#cb84-3"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb84-4"><a href="statistisk-inferens.html#cb84-4"></a>          <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
+<span id="cb84-5"><a href="statistisk-inferens.html#cb84-5"></a>                       <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb84-6"><a href="statistisk-inferens.html#cb84-6"></a>                       <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb84-7"><a href="statistisk-inferens.html#cb84-7"></a>        <span class="dt">plot.title =</span> </span>
+<span id="cb84-8"><a href="statistisk-inferens.html#cb84-8"></a>          <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb84-9"><a href="statistisk-inferens.html#cb84-9"></a>        <span class="dt">plot.subtitle =</span> </span>
+<span id="cb84-10"><a href="statistisk-inferens.html#cb84-10"></a>          <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb84-11"><a href="statistisk-inferens.html#cb84-11"></a>        <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb84-12"><a href="statistisk-inferens.html#cb84-12"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb84-13"><a href="statistisk-inferens.html#cb84-13"></a>        <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb84-14"><a href="statistisk-inferens.html#cb84-14"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;light gray&quot;</span>),</span>
+<span id="cb84-15"><a href="statistisk-inferens.html#cb84-15"></a>        <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb84-16"><a href="statistisk-inferens.html#cb84-16"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb84-17"><a href="statistisk-inferens.html#cb84-17"></a>        <span class="dt">panel.grid.minor.y =</span> </span>
+<span id="cb84-18"><a href="statistisk-inferens.html#cb84-18"></a>          <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;light gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb84-19"><a href="statistisk-inferens.html#cb84-19"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sambandet mellan längd och bredd på blomblad&quot;</span>,</span>
+<span id="cb84-20"><a href="statistisk-inferens.html#cb84-20"></a>       <span class="dt">x =</span> <span class="st">&quot;Bladbredd&quot;</span>,</span>
+<span id="cb84-21"><a href="statistisk-inferens.html#cb84-21"></a>       <span class="dt">y =</span> <span class="st">&quot;Bladlängd&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb84-22"><a href="statistisk-inferens.html#cb84-22"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">color =</span> <span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>För att matematiskt skatta den regressionsmodell som används för att rita ut linjen i ovanstående diagram använder vi oss utav <code>lm()</code> som står för linear model. Även denna funktion använder sig utav argumenten:</p>
+<ul>
+<li><code>formula</code> - anger strukturen av modellen enligt <code>beroende ~ oberoende</code>,</li>
+<li><code>data</code> - anger vilket datamaterial som ska analyseras.</li>
+</ul>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="statistisk-inferens.html#cb85-1"></a>modell &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">formula =</span> Petal.Length <span class="op">~</span><span class="st"> </span>Petal.Width, <span class="dt">data =</span> iris)</span></code></pre></div>
+<p>På samma sätt som i ANOVA, måste vi använda <code>summary()</code> för att få en mer detaljerad utskrift.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="statistisk-inferens.html#cb86-1"></a><span class="kw">summary</span>(modell)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Petal.Length ~ Petal.Width, data = iris)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.33542 -0.30347 -0.02955  0.25776  1.39453 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.08356    0.07297   14.85   &lt;2e-16 ***
+## Petal.Width  2.22994    0.05140   43.39   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4782 on 148 degrees of freedom
+## Multiple R-squared:  0.9271, Adjusted R-squared:  0.9266 
+## F-statistic:  1882 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Den tredje och fjärde delen av denna utskrift är vad som vi är intresserade av, där <code>coefficients</code> innehåller alla skattade parametrar i modellen, och den sista delen innehåller utvärderingsmått och en kortfattad sammanfattning av regressionens ANOVA-tabell.</p>
+<p>Ur kolumnen <code>Estimate</code> kan vi se att parameterskattningen för <span class="math inline">\(\alpha\)</span> har blivit 1.08, och skattningen för <span class="math inline">\(\beta\)</span> blivit 2.23.</p>
+<div id="inferens-i-regression" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Inferens i regression</h3>
+<p>Enskilda t-test för lutningsparametrar syns i <code>coefficients</code>, och p-värden kan utläsas från kolumnen <code>Pr(&gt;|t|)</code>.</p>
+<p>F-testet för hela modellens signifikans visas i den sista delen där <code>F-statistic</code> anger testvariabeln och <code>p-value</code> anger p-värdet för testet.</p>
 
 </div>
 </div>

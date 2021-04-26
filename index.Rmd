@@ -54,7 +54,7 @@ editor_options:
 </style>
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.height = 2, fig.align = "center", fig.width = 6, eval = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.height = 2, fig.align = "center", fig.width = 6, eval = TRUE, message = FALSE)
 
 
 require(ggplot2)
@@ -1010,7 +1010,7 @@ Notera att `upper`, `diag`, och `lower` måste ange sina argument i en `list()` 
 
 Nedanstående kod kommer skapa ett diagram innehållande spridningsdiagram i den nedre diagonalen över de fyra kontinuerliga variablerna som ligger på position `1:4` i datamaterialet `iris`. Vi väljer också här att plocka bort skalvärden på axlarna då syftet med dessa diagram är att visa sambandet mellan variabler och inte specifika värden som variablerna eller observationer förhåller sig till. Att vi tar bort skalvärden möjliggör också en större rityta som behövs om vi har ett flertal variabler som ska visualiseras.
    
-```{r}
+```{r, message = FALSE}
 
 p <- ggpairs(data = iris,
              columns = 1:4,
@@ -1469,12 +1469,58 @@ summary(anova_model)
 
 ```
 
+## Regressionsmodeller
+När vi vill undersöka sambandet mellan två kontinuerliga variabler kan vi använda linjära regressionsmodeller. Exempelvis skulle vi vilja vara intresserade av att undersöka sambandet mellan `Petal.Width` och `Petal.Length` ur `iris` data (se \@ref(tab:iris)). Vi har i kapitel \@ref(spridningsdiagram) redan visat hur ett spridningsdiagram kan skapas för att visuellt undersöka hur sambandet ser ut.  
 
+```{r}
 
+ggplot(iris) + aes(x = Petal.Width, y = Petal.Length) + geom_point() + 
+  theme_bw() +
+  theme(axis.title.y = 
+          element_text(angle = 0, 
+                       hjust = 1, 
+                       vjust = 0.5), 
+        plot.title = 
+          element_text(hjust = 0.5),
+        plot.subtitle = 
+          element_text(hjust = 0.5),
+        panel.grid.major.x = 
+          element_line(color = "gray"),
+        panel.grid.minor.x = 
+          element_line(color = "light gray"),
+        panel.grid.major.y = 
+          element_line(color = "gray"),
+        panel.grid.minor.y = 
+          element_line(color = "light gray")) + 
+  labs(title = "Sambandet mellan längd och bredd på blomblad",
+       x = "Bladbredd",
+       y = "Bladlängd") + 
+  geom_smooth(method = lm, se = FALSE, color = "orange")
 
+```
 
+För att matematiskt skatta den regressionsmodell som används för att rita ut linjen i ovanstående diagram använder vi oss utav `lm()` som står för linear model. Även denna funktion använder sig utav argumenten:
 
+- `formula` - anger strukturen av modellen enligt `beroende ~ oberoende`,
+- `data` - anger vilket datamaterial som ska analyseras.
 
+```{r}
 
+modell <- lm(formula = Petal.Length ~ Petal.Width, data = iris)
 
+```
 
+På samma sätt som i ANOVA, måste vi använda `summary()` för att få en mer detaljerad utskrift.
+
+```{r}
+summary(modell)
+```
+
+Den tredje och fjärde delen av denna utskrift är vad som vi är intresserade av, där `coefficients` innehåller alla skattade parametrar i modellen, och den sista delen innehåller utvärderingsmått och en kortfattad sammanfattning av regressionens ANOVA-tabell. 
+
+Ur kolumnen `Estimate` kan vi se att parameterskattningen för $\alpha$ har blivit `r modell$coefficients[1] %>% round(2)`, och skattningen för $\beta$ blivit `r modell$coefficients[2] %>% round(2)`. 
+
+### Inferens i regression
+Enskilda t-test för lutningsparametrar syns i `coefficients`, och p-värden kan utläsas från kolumnen `Pr(>|t|)`. 
+
+F-testet för hela modellens signifikans visas i den sista delen där `F-statistic` anger testvariabeln och `p-value` anger p-värdet för testet.

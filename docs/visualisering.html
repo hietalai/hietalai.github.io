@@ -172,6 +172,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#icke-parametrisk-metod"><i class="fa fa-check"></i><b>4.3.2</b> Icke-parametrisk metod</a></li>
 <li class="chapter" data-level="4.3.3" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#tvåvägs-anova"><i class="fa fa-check"></i><b>4.3.3</b> Tvåvägs-ANOVA</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#regressionsmodeller"><i class="fa fa-check"></i><b>4.4</b> Regressionsmodeller</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="statistisk-inferens.html"><a href="statistisk-inferens.html#inferens-i-regression"><i class="fa fa-check"></i><b>4.4.1</b> Inferens i regression</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -648,52 +651,44 @@ Figur 2.6: Grupperat stapeldiagram med enkel summering (t.vä.) och gruppvis sum
 <p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Då vi pratar om samband är det naturligt att gå vidare till en statistisk metod som kallas för regression som mer i detalj beskriver sambandet mellan variabler. Vi kommer inte gå igenom det så mycket i denna kurs men vi kan fortfarande visualisera den skattade regressionslinje som fås med hjälp av en metod som kallas minsta kvadrat skattning. I R lägger vi till ett till <code>geom</code>-objekt till samma diagram. <code>method = lm</code> anger att vi vill skatta en linjär modell (<strong>l</strong>inear <strong>m</strong>odel) och <code>se = FALSE</code> anger att vi inte vill visa s.k. konfidensband.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="visualisering.html#cb41-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="576" style="display: block; margin: auto;" /></p>
 <div id="visualisering-av-olika-datamaterial-i-samma-diagram" class="section level4">
 <h4><span class="header-section-number">2.5.1.1</span> Visualisering av olika datamaterial i samma diagram</h4>
 <p>Om extremvärden skulle finnas i datamaterialet kommer sambandet (och en inritad regressionslinje) riskera att förskjuta det generella samband som finns. Observera att det i praktiken inte är så lätt att bara plocka bort extremvärden från datamaterialet utan en djupare dykning i orsakerna till detta värde. Är extremvärden en felinmatning eller är det ett riktigt värde som är en del av målpopulationen? För att visa hur vi kan använda olika datamaterial i samma diagram kommer vi göra det naïva och plocka bort dessa.</p>
 <p>I detta skede av er utbildning rekommenderas att ni identifierar dessa punkter i diagrammet och manuellt tar bort dessa ur data i Excel, sparar en ny fil med nytt namn, och importerar detta nya material till R och sparar det som ett nytt objekt.</p>
 <p>Det första vi måste göra för att diagrammet ska bli tydligt är att skapa en grupp (och tillhörande legendrad) för vardera regressionslinje. Detta görs genom att använda <code>aes(color = "gruppnamn")</code> inuti <code>geom_smooth()</code>. Vi ser nu att en legend lagts till i diagrammet med det angivna namnet på linjen som vi skrivit.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="visualisering.html#cb43-1"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb43-2"><a href="visualisering.html#cb43-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;med_extrem&quot;</span>), </span>
-<span id="cb43-3"><a href="visualisering.html#cb43-3"></a>                  <span class="dt">method =</span> lm, </span>
-<span id="cb43-4"><a href="visualisering.html#cb43-4"></a>                  <span class="dt">se =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb43-5"><a href="visualisering.html#cb43-5"></a></span>
-<span id="cb43-6"><a href="visualisering.html#cb43-6"></a>p </span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="visualisering.html#cb42-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb42-2"><a href="visualisering.html#cb42-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;med_extrem&quot;</span>), </span>
+<span id="cb42-3"><a href="visualisering.html#cb42-3"></a>                  <span class="dt">method =</span> lm, </span>
+<span id="cb42-4"><a href="visualisering.html#cb42-4"></a>                  <span class="dt">se =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb42-5"><a href="visualisering.html#cb42-5"></a></span>
+<span id="cb42-6"><a href="visualisering.html#cb42-6"></a>p </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-50-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>För att lägga till den nya regressionslinjen utan extremvärden anges i <code>geom_smooth()</code> ett nytt <code>data</code>-objekt. Linjen kommer då ritas med samma variabler som angivits innan men utgå från detta materials värden, som saknar de extremvärden som man kan urskilja i materialet.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="visualisering.html#cb45-1"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb45-2"><a href="visualisering.html#cb45-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">data =</span> exempeldata_extrem,</span>
-<span id="cb45-3"><a href="visualisering.html#cb45-3"></a>                  <span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;utan_extrem&quot;</span>),</span>
-<span id="cb45-4"><a href="visualisering.html#cb45-4"></a>                  <span class="dt">method =</span> lm,</span>
-<span id="cb45-5"><a href="visualisering.html#cb45-5"></a>                  <span class="dt">se =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb45-6"><a href="visualisering.html#cb45-6"></a>p</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
-## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="visualisering.html#cb43-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb43-2"><a href="visualisering.html#cb43-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">data =</span> exempeldata_extrem,</span>
+<span id="cb43-3"><a href="visualisering.html#cb43-3"></a>                  <span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;utan_extrem&quot;</span>),</span>
+<span id="cb43-4"><a href="visualisering.html#cb43-4"></a>                  <span class="dt">method =</span> lm,</span>
+<span id="cb43-5"><a href="visualisering.html#cb43-5"></a>                  <span class="dt">se =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb43-6"><a href="visualisering.html#cb43-6"></a>p</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Legenden kan behöva förtydligas lite och här får vi återigen användning av de gruppnamn som angetts tidigare i koden. Argumentet <code>name</code> ger en bättre titel på legenden och i <code>values</code> kan vi i vektorn säga specifikt vilka grupper som vi vill ha vissa färger likt <code>"gruppnamn" = "färg"</code>. Vi vill också ange bättre etiketter på dessa grupper och detta görs med <code>labels</code>-argumentet.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="visualisering.html#cb47-1"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb47-2"><a href="visualisering.html#cb47-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">name =</span> <span class="st">&quot;Datamaterial&quot;</span>,</span>
-<span id="cb47-3"><a href="visualisering.html#cb47-3"></a>                         <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;med_extrem&quot;</span> =<span class="st"> &quot;black&quot;</span>,</span>
-<span id="cb47-4"><a href="visualisering.html#cb47-4"></a>                                    <span class="st">&quot;utan_extrem&quot;</span> =<span class="st"> &quot;orange&quot;</span>),</span>
-<span id="cb47-5"><a href="visualisering.html#cb47-5"></a>                         <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;med_extrem&quot;</span> =<span class="st"> &quot;Hela materialet&quot;</span>,</span>
-<span id="cb47-6"><a href="visualisering.html#cb47-6"></a>                                    <span class="st">&quot;utan_extrem&quot;</span> =<span class="st"> &quot;Utan extremvärden&quot;</span>))</span>
-<span id="cb47-7"><a href="visualisering.html#cb47-7"></a></span>
-<span id="cb47-8"><a href="visualisering.html#cb47-8"></a>p</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
-## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="visualisering.html#cb44-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb44-2"><a href="visualisering.html#cb44-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">name =</span> <span class="st">&quot;Datamaterial&quot;</span>,</span>
+<span id="cb44-3"><a href="visualisering.html#cb44-3"></a>                         <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;med_extrem&quot;</span> =<span class="st"> &quot;black&quot;</span>,</span>
+<span id="cb44-4"><a href="visualisering.html#cb44-4"></a>                                    <span class="st">&quot;utan_extrem&quot;</span> =<span class="st"> &quot;orange&quot;</span>),</span>
+<span id="cb44-5"><a href="visualisering.html#cb44-5"></a>                         <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;med_extrem&quot;</span> =<span class="st"> &quot;Hela materialet&quot;</span>,</span>
+<span id="cb44-6"><a href="visualisering.html#cb44-6"></a>                                    <span class="st">&quot;utan_extrem&quot;</span> =<span class="st"> &quot;Utan extremvärden&quot;</span>))</span>
+<span id="cb44-7"><a href="visualisering.html#cb44-7"></a></span>
+<span id="cb44-8"><a href="visualisering.html#cb44-8"></a>p</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="extra-visualisering" class="section level4">
 <h4><span class="header-section-number">2.5.1.2</span> Extra visualisering</h4>
 <p>Det kanske också kan vara intressant att peka ut vilka observationer som plockas bort vilket kan göras genom att skapa ytterligare ett datamaterial med <strong>enbart</strong> de valda extremvärdena. Vi kan då lägga till ett till <code>geom_point()</code> till diagrammet där vi ändrar <code>shape</code> till någon annan symbol som tydliggör att dessa har plockats bort.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="visualisering.html#cb49-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data =</span> exempeldata_extrem_points,</span>
-<span id="cb49-2"><a href="visualisering.html#cb49-2"></a>               <span class="dt">shape =</span> <span class="st">&quot;x&quot;</span>,</span>
-<span id="cb49-3"><a href="visualisering.html#cb49-3"></a>               <span class="dt">size =</span> <span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
-## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="visualisering.html#cb45-1"></a>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data =</span> exempeldata_extrem_points,</span>
+<span id="cb45-2"><a href="visualisering.html#cb45-2"></a>               <span class="dt">shape =</span> <span class="st">&quot;x&quot;</span>,</span>
+<span id="cb45-3"><a href="visualisering.html#cb45-3"></a>               <span class="dt">size =</span> <span class="dv">4</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -781,95 +776,95 @@ Hela landet
 <div id="en-tidsserie" class="section level4">
 <h4><span class="header-section-number">2.5.2.1</span> En tidsserie</h4>
 <p>Om endast en serie ska visualiseras kan vi plocka ut en grupp från det tidigare materialet och visualisera endast det. Vi gör detta med <code>filter()</code> från <code>dplyr</code>-paketet. Kodexemplet gör denna filtrering inuti <code>ggplot()</code> men vi skulle lika gärna skapa ett filtrerad data som sparas som ett nytt objekt och använda det senare i <code>ggplot()</code>.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="visualisering.html#cb51-1"></a><span class="co">## Anger att vi endast vill ha en del av data i diagrammet</span></span>
-<span id="cb51-2"><a href="visualisering.html#cb51-2"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb51-3"><a href="visualisering.html#cb51-3"></a><span class="st">  </span><span class="kw">ggplot</span>(</span>
-<span id="cb51-4"><a href="visualisering.html#cb51-4"></a>    <span class="kw">filter</span>(<span class="dt">.data =</span> tidsserie_exempel, Region <span class="op">==</span><span class="st"> &quot;Hela landet&quot;</span>)</span>
-<span id="cb51-5"><a href="visualisering.html#cb51-5"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="visualisering.html#cb46-1"></a><span class="co">## Anger att vi endast vill ha en del av data i diagrammet</span></span>
+<span id="cb46-2"><a href="visualisering.html#cb46-2"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb46-3"><a href="visualisering.html#cb46-3"></a><span class="st">  </span><span class="kw">ggplot</span>(</span>
+<span id="cb46-4"><a href="visualisering.html#cb46-4"></a>    <span class="kw">filter</span>(<span class="dt">.data =</span> tidsserie_exempel, Region <span class="op">==</span><span class="st"> &quot;Hela landet&quot;</span>)</span>
+<span id="cb46-5"><a href="visualisering.html#cb46-5"></a>    )</span></code></pre></div>
 <p>När vi nu sagt att endast en del av materialet ska visualiseras kan vi som tidigare ange <code>aes()</code> där vi nu måste ange både <code>x</code> och <code>y</code>. På x-axeln vill vi ha tiden, alltså <code>År</code> i vårt exempelmaterial, och y-axeln ska innehålla mätvärden, i detta fall variabeln <code>Antal</code>.</p>
 <p>För att skapa ett linjediagram används <code>geom_line()</code>. I den funktionen finns argument såsom <code>color</code>, <code>linetype</code>, <code>size</code> och liknande som kan användas för att ändra utseendet av diagrammet. Ibland kan linjen bli väldigt smal och svår att se men då kommer argumentet <code>size</code> väl till pass.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="visualisering.html#cb52-1"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb52-2"><a href="visualisering.html#cb52-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> År, <span class="dt">y =</span> Antal) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb52-3"><a href="visualisering.html#cb52-3"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark orange&quot;</span>, <span class="dt">size =</span> <span class="dv">1</span>) </span>
-<span id="cb52-4"><a href="visualisering.html#cb52-4"></a></span>
-<span id="cb52-5"><a href="visualisering.html#cb52-5"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="visualisering.html#cb47-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb47-2"><a href="visualisering.html#cb47-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">aes</span>(<span class="dt">x =</span> År, <span class="dt">y =</span> Antal) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb47-3"><a href="visualisering.html#cb47-3"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark orange&quot;</span>, <span class="dt">size =</span> <span class="dv">1</span>) </span>
+<span id="cb47-4"><a href="visualisering.html#cb47-4"></a></span>
+<span id="cb47-5"><a href="visualisering.html#cb47-5"></a>p</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Som tidigare ändrar vi det visuella och lägger till ytterligare förtydligande texter med liknande koder som innan. Till linjediagram vill vi ofta kunna se både lod- och vågräta avstånd vilket innebär att stödlinjer bör finnas åt båda hållen. Det kan dock vara av intresse att använda och ändra på <code>panel.grid.minor</code>-linjerna till en svagare färg för att göra skillnad på de olika stödlinjerna. I exemplet nedan används en mörkare grå färg för <code>panel.grid.major</code>.</p>
 <p>Något som också introducerats i nedanstående kod är <code>plot.subtitle</code> i <code>theme()</code> som styr egenskaper av undertiteln som i detta diagram kan vara bra för att förtydliga vilken region som materialet visar. Undertitelns text läggs till i <code>labs()</code> och <code>subtitle</code>-argumentet.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="visualisering.html#cb53-1"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb53-2"><a href="visualisering.html#cb53-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
-<span id="cb53-3"><a href="visualisering.html#cb53-3"></a>                           <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
-<span id="cb53-4"><a href="visualisering.html#cb53-4"></a>                                        <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
-<span id="cb53-5"><a href="visualisering.html#cb53-5"></a>                                        <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
-<span id="cb53-6"><a href="visualisering.html#cb53-6"></a>                         <span class="dt">plot.title =</span> </span>
-<span id="cb53-7"><a href="visualisering.html#cb53-7"></a>                           <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb53-8"><a href="visualisering.html#cb53-8"></a>                         <span class="dt">plot.subtitle =</span> </span>
-<span id="cb53-9"><a href="visualisering.html#cb53-9"></a>                           <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb53-10"><a href="visualisering.html#cb53-10"></a>                         <span class="dt">panel.grid.major.x =</span> </span>
-<span id="cb53-11"><a href="visualisering.html#cb53-11"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
-<span id="cb53-12"><a href="visualisering.html#cb53-12"></a>                         <span class="dt">panel.grid.minor.x =</span> </span>
-<span id="cb53-13"><a href="visualisering.html#cb53-13"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
-<span id="cb53-14"><a href="visualisering.html#cb53-14"></a>                         <span class="dt">panel.grid.major.y =</span> </span>
-<span id="cb53-15"><a href="visualisering.html#cb53-15"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
-<span id="cb53-16"><a href="visualisering.html#cb53-16"></a>                         <span class="dt">panel.grid.minor.y =</span> </span>
-<span id="cb53-17"><a href="visualisering.html#cb53-17"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb53-18"><a href="visualisering.html#cb53-18"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
-<span id="cb53-19"><a href="visualisering.html#cb53-19"></a>       <span class="dt">x =</span> <span class="st">&quot;År&quot;</span>, </span>
-<span id="cb53-20"><a href="visualisering.html#cb53-20"></a>       <span class="dt">title =</span> <span class="st">&quot;Antal anmälda våldsbrott per 100 000 invånare&quot;</span>, </span>
-<span id="cb53-21"><a href="visualisering.html#cb53-21"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Hela landet&quot;</span>,</span>
-<span id="cb53-22"><a href="visualisering.html#cb53-22"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: SCB (2012)&quot;</span>)</span>
-<span id="cb53-23"><a href="visualisering.html#cb53-23"></a></span>
-<span id="cb53-24"><a href="visualisering.html#cb53-24"></a>p </span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="visualisering.html#cb48-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb48-2"><a href="visualisering.html#cb48-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb48-3"><a href="visualisering.html#cb48-3"></a>                           <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>, </span>
+<span id="cb48-4"><a href="visualisering.html#cb48-4"></a>                                        <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb48-5"><a href="visualisering.html#cb48-5"></a>                                        <span class="dt">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb48-6"><a href="visualisering.html#cb48-6"></a>                         <span class="dt">plot.title =</span> </span>
+<span id="cb48-7"><a href="visualisering.html#cb48-7"></a>                           <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb48-8"><a href="visualisering.html#cb48-8"></a>                         <span class="dt">plot.subtitle =</span> </span>
+<span id="cb48-9"><a href="visualisering.html#cb48-9"></a>                           <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb48-10"><a href="visualisering.html#cb48-10"></a>                         <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb48-11"><a href="visualisering.html#cb48-11"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb48-12"><a href="visualisering.html#cb48-12"></a>                         <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb48-13"><a href="visualisering.html#cb48-13"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb48-14"><a href="visualisering.html#cb48-14"></a>                         <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb48-15"><a href="visualisering.html#cb48-15"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb48-16"><a href="visualisering.html#cb48-16"></a>                         <span class="dt">panel.grid.minor.y =</span> </span>
+<span id="cb48-17"><a href="visualisering.html#cb48-17"></a>                           <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb48-18"><a href="visualisering.html#cb48-18"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
+<span id="cb48-19"><a href="visualisering.html#cb48-19"></a>       <span class="dt">x =</span> <span class="st">&quot;År&quot;</span>, </span>
+<span id="cb48-20"><a href="visualisering.html#cb48-20"></a>       <span class="dt">title =</span> <span class="st">&quot;Antal anmälda våldsbrott per 100 000 invånare&quot;</span>, </span>
+<span id="cb48-21"><a href="visualisering.html#cb48-21"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Hela landet&quot;</span>,</span>
+<span id="cb48-22"><a href="visualisering.html#cb48-22"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: SCB (2012)&quot;</span>)</span>
+<span id="cb48-23"><a href="visualisering.html#cb48-23"></a></span>
+<span id="cb48-24"><a href="visualisering.html#cb48-24"></a>p </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-58-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="flera-tidsserier" class="section level4">
 <h4><span class="header-section-number">2.5.2.2</span> Flera tidsserier</h4>
 <p>För att visualisera flera tidsserier i ett diagram kräver <code>ggplot2</code> att datamaterialet ska vara formaterad med en grupperingsvariabel. För att R ska göra skillnad på dessa olika grupper måste <code>group</code> och/eller <code>color</code> argumentet i <code>aes</code> innehålla den grupperingsvariabel som finns i data.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="visualisering.html#cb54-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(tidsserie_exempel) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb54-2"><a href="visualisering.html#cb54-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> År, </span>
-<span id="cb54-3"><a href="visualisering.html#cb54-3"></a>      <span class="dt">y =</span> Antal, </span>
-<span id="cb54-4"><a href="visualisering.html#cb54-4"></a>      <span class="dt">color =</span> Region, </span>
-<span id="cb54-5"><a href="visualisering.html#cb54-5"></a>      <span class="dt">group =</span> Region) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb54-6"><a href="visualisering.html#cb54-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>)  </span>
-<span id="cb54-7"><a href="visualisering.html#cb54-7"></a></span>
-<span id="cb54-8"><a href="visualisering.html#cb54-8"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="visualisering.html#cb49-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(tidsserie_exempel) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb49-2"><a href="visualisering.html#cb49-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> År, </span>
+<span id="cb49-3"><a href="visualisering.html#cb49-3"></a>      <span class="dt">y =</span> Antal, </span>
+<span id="cb49-4"><a href="visualisering.html#cb49-4"></a>      <span class="dt">color =</span> Region, </span>
+<span id="cb49-5"><a href="visualisering.html#cb49-5"></a>      <span class="dt">group =</span> Region) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb49-6"><a href="visualisering.html#cb49-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>)  </span>
+<span id="cb49-7"><a href="visualisering.html#cb49-7"></a></span>
+<span id="cb49-8"><a href="visualisering.html#cb49-8"></a>p</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Som tidigare kan vi nu ändra om flera aspekter av diagrammet men nu måste vi också ändra den legend som skapas från grupperna i <code>aes()</code>. När vi nu vill ändra linjefärger är det funktionen <code>scale_color_manual()</code> som ska användas, specifikt argumentet <code>values</code>.</p>
 <p>Problemet som vi kommer märka är att det är svårt att skapa en vektor med färger som är tydliga nog för olika situationer. Kodexemplet nedan försöker använda delar av <code>brewer.pal(palette = "Oranges")</code> tillsammans med en svart grundfärg för att bibehålla en färgstil.</p>
 <p><code>brewer.pal()</code>-funktionen försöker plocka färger från den angivna paletten som skiljer sig från varandra men att ange <code>n = 3</code> för de tre regionerna ger en alltför ljus färg som den första. Indexeringen <code>[-1]</code> plockar bort den första ljusa färgen och vi lägger istället till svart först i <code>values</code>-vektorn.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="visualisering.html#cb55-1"></a>p &lt;-<span class="st"> </span></span>
-<span id="cb55-2"><a href="visualisering.html#cb55-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> </span>
-<span id="cb55-3"><a href="visualisering.html#cb55-3"></a>                           <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="kw">brewer.pal</span>(<span class="dt">n =</span> <span class="dv">3</span>, <span class="st">&quot;Oranges&quot;</span>)[<span class="op">-</span><span class="dv">1</span>])) <span class="op">+</span></span>
-<span id="cb55-4"><a href="visualisering.html#cb55-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
-<span id="cb55-5"><a href="visualisering.html#cb55-5"></a>                       <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>,</span>
-<span id="cb55-6"><a href="visualisering.html#cb55-6"></a>                                    <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
-<span id="cb55-7"><a href="visualisering.html#cb55-7"></a>                                    <span class="dt">vjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb55-8"><a href="visualisering.html#cb55-8"></a>                     <span class="dt">plot.title =</span> </span>
-<span id="cb55-9"><a href="visualisering.html#cb55-9"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb55-10"><a href="visualisering.html#cb55-10"></a>                     <span class="dt">plot.subtitle =</span> </span>
-<span id="cb55-11"><a href="visualisering.html#cb55-11"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb55-12"><a href="visualisering.html#cb55-12"></a>                     <span class="dt">panel.grid.major.x =</span> </span>
-<span id="cb55-13"><a href="visualisering.html#cb55-13"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
-<span id="cb55-14"><a href="visualisering.html#cb55-14"></a>                     <span class="dt">panel.grid.minor.x =</span> </span>
-<span id="cb55-15"><a href="visualisering.html#cb55-15"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
-<span id="cb55-16"><a href="visualisering.html#cb55-16"></a>                     <span class="dt">panel.grid.major.y =</span> </span>
-<span id="cb55-17"><a href="visualisering.html#cb55-17"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
-<span id="cb55-18"><a href="visualisering.html#cb55-18"></a>                     <span class="dt">panel.grid.minor.y =</span> </span>
-<span id="cb55-19"><a href="visualisering.html#cb55-19"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb55-20"><a href="visualisering.html#cb55-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
-<span id="cb55-21"><a href="visualisering.html#cb55-21"></a>       <span class="dt">x =</span> <span class="st">&quot;År&quot;</span>, </span>
-<span id="cb55-22"><a href="visualisering.html#cb55-22"></a>       <span class="dt">title =</span> <span class="st">&quot;Antal anmälda våldsbrott per 100 000 invånare&quot;</span>, </span>
-<span id="cb55-23"><a href="visualisering.html#cb55-23"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Jämförelse av riket och två län&quot;</span>,</span>
-<span id="cb55-24"><a href="visualisering.html#cb55-24"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: SCB (2012)&quot;</span>)</span>
-<span id="cb55-25"><a href="visualisering.html#cb55-25"></a></span>
-<span id="cb55-26"><a href="visualisering.html#cb55-26"></a>p </span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="visualisering.html#cb50-1"></a>p &lt;-<span class="st"> </span></span>
+<span id="cb50-2"><a href="visualisering.html#cb50-2"></a><span class="st">  </span>p <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> </span>
+<span id="cb50-3"><a href="visualisering.html#cb50-3"></a>                           <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="kw">brewer.pal</span>(<span class="dt">n =</span> <span class="dv">3</span>, <span class="st">&quot;Oranges&quot;</span>)[<span class="op">-</span><span class="dv">1</span>])) <span class="op">+</span></span>
+<span id="cb50-4"><a href="visualisering.html#cb50-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> </span>
+<span id="cb50-5"><a href="visualisering.html#cb50-5"></a>                       <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">0</span>,</span>
+<span id="cb50-6"><a href="visualisering.html#cb50-6"></a>                                    <span class="dt">hjust =</span> <span class="dv">1</span>, </span>
+<span id="cb50-7"><a href="visualisering.html#cb50-7"></a>                                    <span class="dt">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb50-8"><a href="visualisering.html#cb50-8"></a>                     <span class="dt">plot.title =</span> </span>
+<span id="cb50-9"><a href="visualisering.html#cb50-9"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb50-10"><a href="visualisering.html#cb50-10"></a>                     <span class="dt">plot.subtitle =</span> </span>
+<span id="cb50-11"><a href="visualisering.html#cb50-11"></a>                       <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb50-12"><a href="visualisering.html#cb50-12"></a>                     <span class="dt">panel.grid.major.x =</span> </span>
+<span id="cb50-13"><a href="visualisering.html#cb50-13"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb50-14"><a href="visualisering.html#cb50-14"></a>                     <span class="dt">panel.grid.minor.x =</span> </span>
+<span id="cb50-15"><a href="visualisering.html#cb50-15"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>),</span>
+<span id="cb50-16"><a href="visualisering.html#cb50-16"></a>                     <span class="dt">panel.grid.major.y =</span> </span>
+<span id="cb50-17"><a href="visualisering.html#cb50-17"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;dark gray&quot;</span>),</span>
+<span id="cb50-18"><a href="visualisering.html#cb50-18"></a>                     <span class="dt">panel.grid.minor.y =</span> </span>
+<span id="cb50-19"><a href="visualisering.html#cb50-19"></a>                       <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb50-20"><a href="visualisering.html#cb50-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Antal&quot;</span>, </span>
+<span id="cb50-21"><a href="visualisering.html#cb50-21"></a>       <span class="dt">x =</span> <span class="st">&quot;År&quot;</span>, </span>
+<span id="cb50-22"><a href="visualisering.html#cb50-22"></a>       <span class="dt">title =</span> <span class="st">&quot;Antal anmälda våldsbrott per 100 000 invånare&quot;</span>, </span>
+<span id="cb50-23"><a href="visualisering.html#cb50-23"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Jämförelse av riket och två län&quot;</span>,</span>
+<span id="cb50-24"><a href="visualisering.html#cb50-24"></a>       <span class="dt">caption =</span> <span class="st">&quot;Källa: SCB (2012)&quot;</span>)</span>
+<span id="cb50-25"><a href="visualisering.html#cb50-25"></a></span>
+<span id="cb50-26"><a href="visualisering.html#cb50-26"></a>p </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-60-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="punktdiagramsmatris" class="section level3">
 <h3><span class="header-section-number">2.5.3</span> Punktdiagramsmatris</h3>
 <p>För att skapa en punktdiagramsmatris (spridningsdiagramsmatris) i R behöver vi använda ytterligare ett paket, nämligen <code>GGally</code>. I detta paket finns funktionen <code>ggpairs()</code> som är (av författarna) skapat som som en samling <code>ggplot2</code>-instruktioner som möjliggör skapandet av flera spridningsdiagram inuti ett och samma diagram. Kom ihåg att ladda in detta nya paket i R innan vi fortsätter.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="visualisering.html#cb56-1"></a><span class="kw">require</span>(GGally)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="visualisering.html#cb51-1"></a><span class="kw">require</span>(GGally)</span></code></pre></div>
 <p>Datamaterialet som används till detta exempel är ett utav de inbyggda materialen som finns i R, nämligen <code>iris</code>. Det innehåller fyra stycken kontinuerliga variabler som beskriver olika mått på blommor och ytterligare en kategorisk variabel som anger vilken art observationen tillhör. Datamaterialet ser ut som följer:</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -996,85 +991,37 @@ setosa
 </ul>
 <p>Notera att <code>upper</code>, <code>diag</code>, och <code>lower</code> måste ange sina argument i en <code>list()</code> där variabeltypen måste anges först. I detta exempel kommer vi behöva skriva <code>list(continuous = )</code> då variablerna är kontinuerliga. Gå in i dokumentationen för funktionen och i <em>Details</em> står vilka andra diagram som kan visualiseras i de olika områdena.</p>
 <p>Nedanstående kod kommer skapa ett diagram innehållande spridningsdiagram i den nedre diagonalen över de fyra kontinuerliga variablerna som ligger på position <code>1:4</code> i datamaterialet <code>iris</code>. Vi väljer också här att plocka bort skalvärden på axlarna då syftet med dessa diagram är att visa sambandet mellan variabler och inte specifika värden som variablerna eller observationer förhåller sig till. Att vi tar bort skalvärden möjliggör också en större rityta som behövs om vi har ett flertal variabler som ska visualiseras.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="visualisering.html#cb57-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggpairs</span>(<span class="dt">data =</span> iris,</span>
-<span id="cb57-2"><a href="visualisering.html#cb57-2"></a>             <span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
-<span id="cb57-3"><a href="visualisering.html#cb57-3"></a>             <span class="dt">title =</span> <span class="st">&quot;Samband mellan mått på blommor&quot;</span>,</span>
-<span id="cb57-4"><a href="visualisering.html#cb57-4"></a>             <span class="dt">upper =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;points&quot;</span>),</span>
-<span id="cb57-5"><a href="visualisering.html#cb57-5"></a>             <span class="dt">diag =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blankDiag&quot;</span>),</span>
-<span id="cb57-6"><a href="visualisering.html#cb57-6"></a>             <span class="dt">lower =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blank&quot;</span>),</span>
-<span id="cb57-7"><a href="visualisering.html#cb57-7"></a>             <span class="dt">axisLabels =</span> <span class="st">&quot;none&quot;</span></span>
-<span id="cb57-8"><a href="visualisering.html#cb57-8"></a>             ) </span>
-<span id="cb57-9"><a href="visualisering.html#cb57-9"></a></span>
-<span id="cb57-10"><a href="visualisering.html#cb57-10"></a>p</span></code></pre></div>
-<pre><code>## plot: [1,1] [=====&gt;------------------------------------------------------------------------------------------] 6% est: 0s
-## plot: [1,2] [===========&gt;------------------------------------------------------------------------------------] 12% est: 0s
-## plot: [1,3] [=================&gt;------------------------------------------------------------------------------] 19% est: 0s
-## plot: [1,4] [=======================&gt;------------------------------------------------------------------------] 25% est: 0s
-## plot: [2,1] [=============================&gt;------------------------------------------------------------------] 31% est: 0s
-## plot: [2,2] [===================================&gt;------------------------------------------------------------] 38% est: 0s
-## plot: [2,3] [=========================================&gt;------------------------------------------------------] 44% est: 0s
-## plot: [2,4] [===============================================&gt;------------------------------------------------] 50% est: 0s
-## plot: [3,1] [=====================================================&gt;------------------------------------------] 56% est: 0s
-## plot: [3,2] [===========================================================&gt;------------------------------------] 62% est: 0s
-## plot: [3,3] [=================================================================&gt;------------------------------] 69% est: 0s
-## plot: [3,4] [=======================================================================&gt;------------------------] 75% est: 0s
-## plot: [4,1] [=============================================================================&gt;------------------] 81% est: 0s
-## plot: [4,2] [===================================================================================&gt;------------] 88% est: 0s
-## plot: [4,3] [=========================================================================================&gt;------] 94% est: 0s
-## plot: [4,4] [================================================================================================]100% est: 0s</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="visualisering.html#cb52-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggpairs</span>(<span class="dt">data =</span> iris,</span>
+<span id="cb52-2"><a href="visualisering.html#cb52-2"></a>             <span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb52-3"><a href="visualisering.html#cb52-3"></a>             <span class="dt">title =</span> <span class="st">&quot;Samband mellan mått på blommor&quot;</span>,</span>
+<span id="cb52-4"><a href="visualisering.html#cb52-4"></a>             <span class="dt">upper =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;points&quot;</span>),</span>
+<span id="cb52-5"><a href="visualisering.html#cb52-5"></a>             <span class="dt">diag =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blankDiag&quot;</span>),</span>
+<span id="cb52-6"><a href="visualisering.html#cb52-6"></a>             <span class="dt">lower =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blank&quot;</span>),</span>
+<span id="cb52-7"><a href="visualisering.html#cb52-7"></a>             <span class="dt">axisLabels =</span> <span class="st">&quot;none&quot;</span></span>
+<span id="cb52-8"><a href="visualisering.html#cb52-8"></a>             ) </span>
+<span id="cb52-9"><a href="visualisering.html#cb52-9"></a></span>
+<span id="cb52-10"><a href="visualisering.html#cb52-10"></a>p</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-62-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Som tur är finns det möjlighet att ändra vissa delar av diagrammet för att förtydliga vissa delar.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="visualisering.html#cb59-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb59-2"><a href="visualisering.html#cb59-2"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span>
-<span id="cb59-3"><a href="visualisering.html#cb59-3"></a></span>
-<span id="cb59-4"><a href="visualisering.html#cb59-4"></a>p</span></code></pre></div>
-<pre><code>## plot: [1,1] [=====&gt;------------------------------------------------------------------------------------------] 6% est: 0s
-## plot: [1,2] [===========&gt;------------------------------------------------------------------------------------] 12% est: 0s
-## plot: [1,3] [=================&gt;------------------------------------------------------------------------------] 19% est: 0s
-## plot: [1,4] [=======================&gt;------------------------------------------------------------------------] 25% est: 0s
-## plot: [2,1] [=============================&gt;------------------------------------------------------------------] 31% est: 0s
-## plot: [2,2] [===================================&gt;------------------------------------------------------------] 38% est: 0s
-## plot: [2,3] [=========================================&gt;------------------------------------------------------] 44% est: 0s
-## plot: [2,4] [===============================================&gt;------------------------------------------------] 50% est: 0s
-## plot: [3,1] [=====================================================&gt;------------------------------------------] 56% est: 0s
-## plot: [3,2] [===========================================================&gt;------------------------------------] 62% est: 0s
-## plot: [3,3] [=================================================================&gt;------------------------------] 69% est: 0s
-## plot: [3,4] [=======================================================================&gt;------------------------] 75% est: 0s
-## plot: [4,1] [=============================================================================&gt;------------------] 81% est: 0s
-## plot: [4,2] [===================================================================================&gt;------------] 88% est: 0s
-## plot: [4,3] [=========================================================================================&gt;------] 94% est: 0s
-## plot: [4,4] [================================================================================================]100% est: 0s</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="visualisering.html#cb53-1"></a>p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb53-2"><a href="visualisering.html#cb53-2"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb53-3"><a href="visualisering.html#cb53-3"></a></span>
+<span id="cb53-4"><a href="visualisering.html#cb53-4"></a>p</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="576" style="display: block; margin: auto;" /></p>
 <div id="färgläggning-av-observationer-beroende-på-klass" class="section level4">
 <h4><span class="header-section-number">2.5.3.1</span> Färgläggning av observationer beroende på klass</h4>
 <p>Det kan finnas tillfällen där samband mellan variabler ser olika ut beroende på en kategorisk variabel som inkluderas i datamaterialet. Detta <em>kan</em> också inkluderas i dessa diagram, men risken är att det blir för mycket information som trycks ihop på en för liten yta. Tyvärr finns inte ett enkelt sätt att ändra dessa färger eller skapa en legend som tydligt beskriver vilken färg som hör till vilken kategori…</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="visualisering.html#cb61-1"></a><span class="kw">ggpairs</span>(<span class="dt">data =</span> iris,</span>
-<span id="cb61-2"><a href="visualisering.html#cb61-2"></a>        <span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
-<span id="cb61-3"><a href="visualisering.html#cb61-3"></a>        <span class="dt">title =</span> <span class="st">&quot;Samband mellan mått på blommor&quot;</span>,</span>
-<span id="cb61-4"><a href="visualisering.html#cb61-4"></a>        <span class="dt">upper =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;points&quot;</span>),</span>
-<span id="cb61-5"><a href="visualisering.html#cb61-5"></a>        <span class="dt">diag =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blankDiag&quot;</span>),</span>
-<span id="cb61-6"><a href="visualisering.html#cb61-6"></a>        <span class="dt">lower =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blank&quot;</span>),</span>
-<span id="cb61-7"><a href="visualisering.html#cb61-7"></a>        <span class="dt">axisLabels =</span> <span class="st">&quot;none&quot;</span>,</span>
-<span id="cb61-8"><a href="visualisering.html#cb61-8"></a>        <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">color =</span> Species)</span>
-<span id="cb61-9"><a href="visualisering.html#cb61-9"></a>        ) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb61-10"><a href="visualisering.html#cb61-10"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb61-11"><a href="visualisering.html#cb61-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
-<pre><code>## plot: [1,1] [=====&gt;------------------------------------------------------------------------------------------] 6% est: 0s
-## plot: [1,2] [===========&gt;------------------------------------------------------------------------------------] 12% est: 0s
-## plot: [1,3] [=================&gt;------------------------------------------------------------------------------] 19% est: 0s
-## plot: [1,4] [=======================&gt;------------------------------------------------------------------------] 25% est: 0s
-## plot: [2,1] [=============================&gt;------------------------------------------------------------------] 31% est: 0s
-## plot: [2,2] [===================================&gt;------------------------------------------------------------] 38% est: 0s
-## plot: [2,3] [=========================================&gt;------------------------------------------------------] 44% est: 0s
-## plot: [2,4] [===============================================&gt;------------------------------------------------] 50% est: 0s
-## plot: [3,1] [=====================================================&gt;------------------------------------------] 56% est: 0s
-## plot: [3,2] [===========================================================&gt;------------------------------------] 62% est: 0s
-## plot: [3,3] [=================================================================&gt;------------------------------] 69% est: 0s
-## plot: [3,4] [=======================================================================&gt;------------------------] 75% est: 0s
-## plot: [4,1] [=============================================================================&gt;------------------] 81% est: 0s
-## plot: [4,2] [===================================================================================&gt;------------] 88% est: 0s
-## plot: [4,3] [=========================================================================================&gt;------] 94% est: 0s
-## plot: [4,4] [================================================================================================]100% est: 0s</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="visualisering.html#cb54-1"></a><span class="kw">ggpairs</span>(<span class="dt">data =</span> iris,</span>
+<span id="cb54-2"><a href="visualisering.html#cb54-2"></a>        <span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb54-3"><a href="visualisering.html#cb54-3"></a>        <span class="dt">title =</span> <span class="st">&quot;Samband mellan mått på blommor&quot;</span>,</span>
+<span id="cb54-4"><a href="visualisering.html#cb54-4"></a>        <span class="dt">upper =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;points&quot;</span>),</span>
+<span id="cb54-5"><a href="visualisering.html#cb54-5"></a>        <span class="dt">diag =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blankDiag&quot;</span>),</span>
+<span id="cb54-6"><a href="visualisering.html#cb54-6"></a>        <span class="dt">lower =</span> <span class="kw">list</span>(<span class="dt">continuous =</span> <span class="st">&quot;blank&quot;</span>),</span>
+<span id="cb54-7"><a href="visualisering.html#cb54-7"></a>        <span class="dt">axisLabels =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb54-8"><a href="visualisering.html#cb54-8"></a>        <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">color =</span> Species)</span>
+<span id="cb54-9"><a href="visualisering.html#cb54-9"></a>        ) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb54-10"><a href="visualisering.html#cb54-10"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb54-11"><a href="visualisering.html#cb54-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-64-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 </div>
